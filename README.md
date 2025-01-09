@@ -37,12 +37,7 @@ source('install_packages.R')
 
 # Usage
 To use the scripts, simply follow these steps:
-
-1. James Madison
-2. James Monroe
-3. John Quincy Adams
-
-     1. Clone or download the repository to your local machine.
+    1. Clone or download the repository to your local machine.
     2.  Install the required packages by running source('library.R').
     3. Prepare your dataset according to the format described in the project's documentation (e.g., .csv or .tsv files).
     4. Run the individual scripts in the desired order. For example:
