@@ -37,13 +37,13 @@ source('install_packages.R')
 
 # Usage
 To use the scripts, simply follow these steps:
-    1. Clone or download the repository to your local machine.
-    2.  Install the required packages by running source('library.R').
-    3. Prepare your dataset according to the format described in the project's documentation (e.g., .csv or .tsv files).
-    4. Run the individual scripts in the desired order. For example:
-        - script_data_import.R to import your raw data.
-        - script_taxonomic_assignment.R for assigning taxonomic ranks.
-    5. Modify the scripts as needed for your specific dataset or research requirements.
+1. Clone or download the repository to your local machine.
+2.  Install the required packages by running source('library.R').
+3. Prepare your dataset according to the format described in the project's documentation (e.g., .csv or .tsv files).
+4. Run the individual scripts in the desired order. For example:
+  - script_data_import.R to import your raw data.
+  - script_taxonomic_assignment.R for assigning taxonomic ranks.
+5. Modify the scripts as needed for your specific dataset or research requirements.
 
 # License
 
