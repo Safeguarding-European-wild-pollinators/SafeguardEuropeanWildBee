@@ -12,10 +12,21 @@ dictionary <- fread("./data/dictionary.csv", header = TRUE,
                     sep = ";", dec = ".", strip.white = FALSE, encoding = "UTF-8")
 
 
+
+# Ensure that scientific names have been completed
+# If the original taxon is empty, add the current name.
+# If the current taxon has not been filled in, add the original name.
+# This ensures that scientific name information has not been lost, as scientificName will be overwritten later.
+df <- mutate(df,
+             verbatimScientificName = if_else(is.na(verbatimScientificName), scientificName, verbatimScientificName),
+             scientificName = if_else(is.na(scientificName), verbatimScientificName, scientificName)
+)
+
+
 # Validation name process ----
 df <- df %>% 
   rename(TAXON_ORIGINAL = verbatimScientificName,
-         TAXON_TO_EVALUATE = ScientificName) %>% 
+         TAXON_TO_EVALUATE = scientificName) %>% 
   as.data.table(df)
 
 ## df_dico  ---- 
@@ -86,13 +97,23 @@ TAXON_fuzzy <- stringdist_join(TAXON_invalid, TAXON_dico,
          TAXON_DICO = TAXON.y,
          DISTANCE = dist)  # rename the columns)
 
-# export ----
-# Export the data to an Excel file
+# Export ----
+## export Fuzzy name ----
+# Export the fuzzy name to an Excel file
 write_xlsx(TAXON_fuzzy, "./output/TAXON_fuzzy.xlsx") 
 
+## export validated data ----
 # Export only data with correct species names
-df_valid <- filter(df, VALIDATION_NAME == "OK")
-fwrite(df_valid, paste0("./data/2_quality_check_", Sys.Date(), ".csv"))
+table(df_dico$VALIDATION_NAME, useNA = "always")
+
+df_valid <- filter(df_dico, VALIDATION_NAME == "OK") %>% # Keep only validated rows
+  # mutate(scientificName = TAXON_TO_EVALUATE, # 
+  #        verbatimScientificName = TAXON_ORIGINAL) %>% 
+  select(-VALIDATION_NAME, -TAXON_DICO, -TAXON_ORIGINAL, -TAXON_TO_EVALUATE)
+
+# Export with fwrite
+fwrite(df_valid, paste0("./data/2_validation_name_", Sys.Date(), ".csv"),
+       sep = ";", dec = ".", row.names = FALSE)
 
 # Remove objects from memory
 rm(list = ls())
