@@ -41,10 +41,10 @@ To use the scripts, simply follow these steps:
 2. Install the required packages by running source('library.R').
 3. Prepare your dataset according to the format described in metadata documentation (metadata.csv).
 4. Run the individual scripts in the same order. 
-  - `01_data_import.R`
-  - `02_scientificName_validation.R`
-  - `03_taxonomy_classification.R`
-  - `04_quality_check.R`
+    - `01_data_import.R`
+    - `02_scientificName_validation.R`
+    - `03_taxonomy_classification.R`
+    - `04_quality_check.R`
 
 5. Modify the scripts as needed for your specific dataset or research requirements.
 
