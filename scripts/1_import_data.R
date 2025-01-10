@@ -1,4 +1,4 @@
-# library ----
+# Library ----
 source("./library.R", echo = FALSE)
 
 # import ----
@@ -17,7 +17,7 @@ df <- purrr::map_df(files_list, ~{
 }) %>%
   as.data.table() # Ensure that the data is a data.table
 
-# cleaning character ----
+# Cleaning character ----
 # Function that applies iconv and gsub to a column
 clean_column <- function(column) {
   column <- iconv(column, to = "UTF-8", sub = "")
@@ -35,8 +35,9 @@ clean_all_columns <- function(df) {
 df <- clean_all_columns(df)
 
 
-# export ----
-fwrite(df, paste0("./data/1_import_data_", Sys.Date(), ".csv"))
+# Export ----
+fwrite(df, paste0("./data/1_import_data_", Sys.Date(), ".csv"), 
+       sep = ";", dec = ".", row.names = FALSE)
 
 # Remove objects from memory
 rm(list = ls())
