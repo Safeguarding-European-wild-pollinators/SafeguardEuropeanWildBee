@@ -1,0 +1,61 @@
+# Library ----
+source("./library.R", echo = FALSE)
+
+# Import  ---- 
+df <- fread(paste0("./data/3_quality_check_", Sys.Date(), ".csv"), header = TRUE, 
+            sep = ";", dec = ".", strip.white = FALSE, encoding = "UTF-8")
+
+# Data with the taxonomic classification of wild bees
+taxonomy <- fread("./data/wildBeeClassification.csv", header = TRUE, 
+                  sep = ";", strip.white = TRUE, encoding = "UTF-8")
+
+# duplicates_taxonomy <- taxonomy %>%
+#   group_by(internal_name) %>%
+#   filter(n() > 1)
+
+# taxonomy_unique <- taxonomy %>% # I've add in ORBIT file the new species and species for map (sometimes it's duplicated)
+#   distinct(internal_name, .keep_all = TRUE)
+
+## scientificName ----
+# Check scientificName, if there are NA values
+(sum(is.na(df$scientificName)))
+(sum(is.na(df$verbatimScientificName)))
+
+
+
+# Taxonomic classification ----
+## Save the original taxonomic classification ----
+# Ensure that original taxonomic classification have been filled
+# If the original classification is empty, add the current name. The current classification will be overwritten after with taxonomy dataframe.
+df <- mutate(df,
+             verbatimScientificNameAuthorship = if_else(is.na(verbatimScientificNameAuthorship), scientificNameAuthorship, verbatimScientificNameAuthorship),
+             verbatimFamily                   = if_else(is.na(verbatimFamily),                   family,                   verbatimFamily),
+             verbatimSubfamily                = if_else(is.na(verbatimSubfamily),                subfamily,                verbatimSubfamily),
+             verbatimTribe                    = if_else(is.na(verbatimTribe),                    tribe,                    verbatimTribe),
+             verbatimGenus                    = if_else(is.na(verbatimGenus),                    genus,                    verbatimGenus),
+             verbatimSubgenus                 = if_else(is.na(verbatimSubgenus),                 subgenus,                 verbatimSubgenus),
+             verbatimSpecificEpithet          = if_else(is.na(verbatimSpecificEpithet),          specificEpithet,          verbatimSpecificEpithet)
+)
+
+## Assign classification ----
+# Assign the taxonomic classification to the dataset
+df_taxonomy <- merge(df, taxonomy, by = "scientificName", all.x = TRUE)
+
+## Check classification ----
+df_taxonomy_check <- select(df_taxonomy, scientificName, family, subfamily, tribe, genus, subgenus, specificEpithet, verbatimFamily, verbatimSubfamily, verbatimTribe, verbatimGenus, verbatimSubgenus, verbatimSpecificEpithet)
+
+library(visdat)
+vis_miss(df_taxonomy_check)
+
+library(naniar)
+gg_miss_var(df_taxonomy_check)  
+gg_miss_upset(df_taxonomy_check) 
+
+# Export ----
+# Export with fwrite
+fwrite(df, paste0("./data/3_taxonomy_classification_", Sys.Date(), ".csv"),
+       sep = ";", dec = ".", row.names = FALSE)
+
+# Remove objects from memory
+rm(list = ls())
+gc()
