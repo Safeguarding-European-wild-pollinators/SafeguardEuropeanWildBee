@@ -4,8 +4,9 @@ library(fuzzyjoin) # More information: https://www.statology.org/fuzzy-matching-
 
 # Import ----
 # Import all data
-df <- fread(paste0("./data/1_import_data_", Sys.Date(), ".csv"), header = TRUE, 
-            sep = ",", dec = ".", strip.white = FALSE, encoding = "UTF-8")
+df <- fread(paste0("./data/working_directory/01_data_import_", Sys.Date(), ".csv"), header = TRUE, 
+            sep = ";", dec = ".", strip.white = FALSE, encoding = "UTF-8")
+df0 <- df # Save the original data
 
 # Import dictionary
 dictionary <- fread("./data/dictionary.csv", header = TRUE, 
@@ -25,7 +26,7 @@ df <- mutate(df,
 
 # Validation name process ----
 df <- df %>% 
-  rename(TAXON_ORIGINAL = verbatimScientificName,
+  mutate(TAXON_ORIGINAL = verbatimScientificName,
          TAXON_TO_EVALUATE = scientificName) %>% 
   as.data.table(df)
 
@@ -111,8 +112,11 @@ df_valid <- filter(df_dico, VALIDATION_NAME == "OK") %>% # Keep only validated r
   #        verbatimScientificName = TAXON_ORIGINAL) %>% 
   select(-VALIDATION_NAME, -TAXON_DICO, -TAXON_ORIGINAL, -TAXON_TO_EVALUATE)
 
+# Check the number of rows
+nrow(df0) - nrow(df_valid)
+
 # Export with fwrite
-fwrite(df_valid, paste0("./data/2_validation_name_", Sys.Date(), ".csv"),
+fwrite(df_valid, paste0("./data/working_directory/02_scientificName_validation_", Sys.Date(), ".csv"),
        sep = ";", dec = ".", row.names = FALSE)
 
 # Remove objects from memory

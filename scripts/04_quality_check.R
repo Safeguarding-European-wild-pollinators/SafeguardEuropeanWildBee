@@ -3,7 +3,7 @@ source("./library.R", echo = FALSE)
 
 # Import ----
 # Import all data
-df <- fread(paste0("./data/3_taxonomy_classification_", Sys.Date(), ".csv"), header = TRUE, 
+df <- fread(paste0("./data/working_directory/03_taxonomy_classification_", Sys.Date(), ".csv"), header = TRUE, 
             sep = ";", dec = ".", strip.white = FALSE, encoding = "UTF-8")
 
 df0 <- df # Used as a backup
@@ -314,7 +314,7 @@ ggplot(country, aes(x = country, y = FREQUENCY, fill = country)) +
 nrow(df0) - nrow(df)
 
 # Export with fwrite
-fwrite(df, paste0("./data/4_quality_check_", Sys.Date(), ".csv"),
+fwrite(df, paste0("./data/working_directory/04_quality_check_", Sys.Date(), ".csv"),
        sep = ";", dec = ".", row.names = FALSE)
 
 # Remove objects from memory

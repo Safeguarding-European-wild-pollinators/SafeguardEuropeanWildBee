@@ -11,11 +11,16 @@ nThread <- detectCores() - 4
 # Import all data
 df <- purrr::map_df(files_list, ~{
   file_name <- basename(.x) # basename() keep only the file name without the path
-  data <- fread(.x, header = TRUE, strip.white = FALSE, encoding = "UTF-8", nThread = nThread) #strip.white = FALSE prevents R to delete space
+  data <- fread(.x, header = TRUE, strip.white = FALSE, encoding = "UTF-8", 
+                nThread = nThread, colClasses = "character") #strip.white = FALSE prevents R to delete space
   data[, FILE_NAME := file_name] # Create FILE_NAME column
   data
 }) %>%
   as.data.table() # Ensure that the data is a data.table
+
+df0 <- df # Save the original data
+
+
 
 # Cleaning character ----
 # Function that applies iconv and gsub to a column
@@ -34,9 +39,11 @@ clean_all_columns <- function(df) {
 
 df <- clean_all_columns(df)
 
+# Check the number of rows
+nrow(df0) - nrow(df)
 
 # Export ----
-fwrite(df, paste0("./data/1_import_data_", Sys.Date(), ".csv"), 
+fwrite(df, paste0("./data/working_directory/01_data_import_", Sys.Date(), ".csv"), 
        sep = ";", dec = ".", row.names = FALSE)
 
 # Remove objects from memory
