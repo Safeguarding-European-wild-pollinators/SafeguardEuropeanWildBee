@@ -152,7 +152,7 @@ colnames(latitude_distribution) <- c("decimalLatitude", "Frequency")
 
 ggplot(latitude_distribution, aes(x = as.numeric(as.character(decimalLatitude)), y = Frequency)) +
   geom_bar(stat = "identity", fill = "lightcoral", color = "lightcoral") +
-  geom_vline(xintercept = c(14, 50), color = "red", linetype = "dashed", size = 1) + # Latitude 50 (= North Italy) and -14 (= Cape Verde) are the limits of the scope
+  geom_vline(xintercept = c(14, 81), color = "red", linetype = "dashed", size = 1) + # Latitude 81 (= Svalbard and Jan Mayen Islands) and -14 (= Cape Verde) are the limits of the scope
   theme_minimal() +
   labs(title = "Latitude distribution", x = "Latitude", y = "Frequency") +
   theme(axis.text.x = element_text(angle = 90, hjust = 1))
@@ -163,7 +163,7 @@ colnames(longitude_distribution) <- c("decimalLongitude", "Frequency")
 
 ggplot(longitude_distribution, aes(x = as.numeric(as.character(decimalLongitude)), y = Frequency)) +
   geom_bar(stat = "identity", fill = "#97DEF0", color = "#97DEF0") +
-  geom_vline(xintercept = c(-32, 47), color = "blue", linetype = "dashed", size = 1) + # Longitude -32 (= Azores) and 47 (= North Azerbadjan) are the limits of the scope
+  geom_vline(xintercept = c(-32, 70), color = "blue", linetype = "dashed", size = 1) + # Longitude -32 (= Azores) and 70 (= Arkhangelsk Oblast) are the limits of the scope
   theme_minimal() +
   labs(title = "Longitude distribution", x = "Longitude", y = "Frequency") +
   theme(axis.text.x = element_text(angle = 90, hjust = 1))
@@ -265,7 +265,7 @@ table(df$monthEnd)
 # Check extreme values of month
 month_check <- df %>%
   filter(monthEnd > 12) %>% 
-  select(occurrenceID, FILE_NAME, yearEnd, monthEnd, dayEnd, DATE_ORIGINAL) %>% 
+  select(occurrenceID, FILE_NAME, yearEnd, monthEnd, dayEnd, verbatimEventDate) %>% 
   arrange(desc(yearEnd))
 
 ## Day ----
@@ -283,10 +283,13 @@ table(df$dayEnd)
 # Check extreme values of day
 day_check <- df %>%
   filter(dayEnd > 31) %>% 
-  select(occurrenceID, FILE_NAME, yearEnd, monthEnd, dayEnd, DATE_ORIGINAL) %>% 
+  select(occurrenceID, FILE_NAME, yearEnd, monthEnd, dayEnd, verbatimEventDate) %>% 
   arrange(desc(yearEnd))
 
 ## eventDate ----
+### Save the original eventDate in verbatimEventDate ----
+# Ensure that original eventDate have been filled in verbatimEventDate
+df <- mutate(df, verbatimEventDate = if_else(is.na(verbatimEventDate), eventDate, verbatimEventDate))
 # Concatenate date
 df <- df %>% mutate(eventDate = paste0(yearEnd, "-", monthEnd, "-", dayEnd))
 
