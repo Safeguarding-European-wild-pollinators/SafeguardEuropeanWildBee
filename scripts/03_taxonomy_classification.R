@@ -5,6 +5,8 @@ source("./library.R", echo = FALSE)
 df <- fread(paste0("./data/working_directory/02_scientificName_validation_", Sys.Date(), ".csv"), header = TRUE, 
             sep = ";", dec = ".", strip.white = FALSE, encoding = "UTF-8")
 
+df0 <- df
+
 # Data with the taxonomic classification of wild bees
 taxonomy <- fread("./data/wildBeeClassification.csv", header = TRUE, 
                   sep = ";", strip.white = TRUE, encoding = "UTF-8")
@@ -44,7 +46,7 @@ naniar::gg_miss_var(df_taxonomy_check)
 
 # Export ----
 # Check the number of rows
-nrow(df0) - nrow(df_valid)
+nrow(df0) - nrow(df)
 # Export with fwrite
 fwrite(df, paste0("./data/working_directory/03_taxonomy_classification_", Sys.Date(), ".csv"),
        sep = ";", dec = ".", row.names = FALSE)
