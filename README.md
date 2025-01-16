@@ -22,6 +22,17 @@ This project does **not** include steps such as:
 
 The scripts are designed to be easily adaptable to similar datasets, and you are welcome to reuse and modify the code as needed, provided proper attribution is given.
 
+@@@@@@@@@@@@@@@ draft @@@@@@@@@@@@@@
+The scripts used different files 
+backbone:
+10.1111/icad.12680
+https://www.researchgate.net/publication/373865563_National_records_of_3000_European_bee_and_hoverfly_species_A_contribution_to_pollinator_conservation
+
+List of species : Ghisbain et al 2023
+Shapefile : IUCN ...
+
+@@@@@@@@@@@@@@@ draft @@@@@@@@@@@@@@
+
 # Requirements
 
 To run the scripts, you'll need:
