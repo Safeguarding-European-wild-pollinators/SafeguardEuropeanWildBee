@@ -3,7 +3,7 @@ source("./library.R", echo = FALSE)
 
 # Import ----
 df <- fread(paste0("./data/working_directory/04_quality_check_", Sys.Date(), ".csv"), header = TRUE, 
-            sep = ";", dec = ".", strip.white = FALSE, encoding = "UTF-8")
+            sep = ";", dec = ".", strip.white = FALSE, encoding = "Latin-1")
 
 # Spatial data ----
 
