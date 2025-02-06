@@ -20,6 +20,20 @@ This project does **not** include steps such as:
 - **Spatial Data Validation**: Spatial data validation process in collaboration with expert taxonomists and national experts.
 
 
+# Data Sources and Attribution
+
+The following external sources were used to ensure the accuracy and reliability of the dataset:
+
+- **Taxonomic Assignment**: The taxonomic ranks (family, subfamily, tribe, genus, and subgenus) were assigned based on:
+> [Reverte et al. (2023)](https://www.researchgate.net/publication/373865563_National_records_of_3000_European_bee_and_hoverfly_species_A_contribution_to_pollinator_conservation): National records of 3000 European bee and hoverfly species: A contribution to pollinator conservation (DOI: [10.1111/icad.12680](10.1111/icad.12680).
+
+- **Scientific Name Validation**: Species names were verified using:
+> [Ghisbain et al. (2023)](https://www.researchgate.net/publication/373048571_The_new_annotated_checklist_of_the_wild_bees_of_Europe_Hymenoptera_Anthophila): The new annotated checklist of the wild bees of Europe (Hymenoptera: Anthophila) (DOI: [10.11646/zootaxa.5327.1.1](10.11646/zootaxa.5327.1.1).
+
+- **Geographical Assignment**: The country and sub-country assignments were performed using shapefiles from the European Commission:
+> [Urbano, Ferdinando (2018)](http://data.europa.eu/89h/jrc-10112-10004): Global administrative boundaries. European Commission, Joint Research Centre (JRC) [Dataset] PID: [http://data.europa.eu/89h/jrc-10112-10004](http://data.europa.eu/89h/jrc-10112-10004).
+
+
 The scripts are designed to be easily adaptable to similar datasets, and you are welcome to reuse and modify the code as needed, provided proper attribution is given.
 
 # Requirements

@@ -5,7 +5,7 @@ library(fuzzyjoin) # More information: https://www.statology.org/fuzzy-matching-
 # Import ----
 # Import all data
 df <- fread(paste0("./data/working_directory/01_data_import_", Sys.Date(), ".csv"), header = TRUE, 
-            sep = ";", dec = ".", strip.white = FALSE, encoding = "UTF-8")
+            sep = ";", dec = ".", strip.white = FALSE, encoding = "Latin-1")
 df0 <- df # Save the original data
 
 # Import dictionary

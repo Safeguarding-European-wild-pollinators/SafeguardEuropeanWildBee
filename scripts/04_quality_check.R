@@ -4,7 +4,7 @@ source("./library.R", echo = FALSE)
 # Import ----
 # Import all data
 df <- fread(paste0("./data/working_directory/03_taxonomy_classification_", Sys.Date(), ".csv"), header = TRUE, 
-            sep = ";", dec = ".", strip.white = FALSE, encoding = "UTF-8")
+            sep = ";", dec = ".", strip.white = FALSE, encoding = "Latin-1")
 
 df0 <- df # Used as a backup
 

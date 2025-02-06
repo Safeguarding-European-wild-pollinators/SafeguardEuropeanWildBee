@@ -11,7 +11,7 @@ nThread <- detectCores() - 4
 # Import all data
 df <- purrr::map_df(files_list, ~{
   file_name <- basename(.x) # basename() keep only the file name without the path
-  data <- fread(.x, header = TRUE, strip.white = FALSE, encoding = "UTF-8", 
+  data <- fread(.x, header = TRUE, strip.white = FALSE, encoding = "Latin-1", 
                 nThread = nThread, colClasses = "character") #strip.white = FALSE prevents R to delete space
   data[, FILE_NAME := file_name] # Create FILE_NAME column
   data
