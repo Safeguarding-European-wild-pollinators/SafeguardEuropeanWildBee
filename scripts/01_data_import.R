@@ -6,7 +6,7 @@ source("./library.R", echo = FALSE)
 files_list <- list.files(path = "./data/dataset_folder/", pattern = "\\.csv$", full.names = TRUE) # List all .csv files in folder
 
 # Choose the number of cores to improve import speed
-nThread <- detectCores() - 4
+nThread <- detectCores() - 2
 
 # Import all data
 df <- purrr::map_df(files_list, ~{

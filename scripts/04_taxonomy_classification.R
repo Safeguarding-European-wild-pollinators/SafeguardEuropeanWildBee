@@ -2,8 +2,8 @@
 source("./library.R", echo = FALSE)
 
 # Import  ---- 
-df <- fread(paste0("./data/working_directory/02_scientificName_validation_", Sys.Date(), ".csv"), header = TRUE, 
-            sep = ";", dec = ".", strip.white = FALSE, encoding = "Latin-1")
+df <- fread(paste0("./data/working_directory/03_scientificName_validation_", Sys.Date(), ".csv"), header = TRUE, 
+            sep = ";", dec = ".", strip.white = FALSE, encoding = "UTF-8")
 
 df0 <- df
 
@@ -48,7 +48,7 @@ naniar::gg_miss_var(df_taxonomy_check)
 # Check the number of rows
 nrow(df0) - nrow(df)
 # Export with fwrite
-fwrite(df, paste0("./data/working_directory/03_taxonomy_classification_", Sys.Date(), ".csv"),
+fwrite(df, paste0("./data/working_directory/04_taxonomy_classification_", Sys.Date(), ".csv"),
        sep = ";", dec = ".", row.names = FALSE)
 
 # Remove objects from memory

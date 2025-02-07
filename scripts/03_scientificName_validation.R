@@ -4,15 +4,25 @@ library(fuzzyjoin) # More information: https://www.statology.org/fuzzy-matching-
 
 # Import ----
 # Import all data
-df <- fread(paste0("./data/working_directory/01_data_import_", Sys.Date(), ".csv"), header = TRUE, 
+df <- fread(paste0("./data/working_directory/02_data_import_", Sys.Date(), ".csv"), header = TRUE, 
             sep = ";", dec = ".", strip.white = FALSE, encoding = "Latin-1")
 df0 <- df # Save the original data
 
 # Import dictionary
-dictionary <- fread("./data/dictionary.csv", header = TRUE, 
+dictionary <- fread("./data/wildBeeDictionary.csv", header = TRUE, 
                     sep = ";", dec = ".", strip.white = FALSE, encoding = "UTF-8")
 
+# Import checklist (list of species)
+checklist <- fread("./data/wildBeeChecklist.csv", header = TRUE, 
+                    sep = ";", dec = ".", strip.white = FALSE, encoding = "UTF-8")
 
+# Data wrangling ----
+# Add a column to check if the species is in the checklist
+df <- df %>% 
+  mutate(isChecklist = ifelse(scientificName %in% checklist$scientificName, "TRUE", "FALSE"))
+
+# Check values:
+table(df$isChecklist, useNA = "always")
 
 # Ensure that scientific names have been completed
 # If the original taxon is empty, add the current name.
@@ -107,16 +117,23 @@ write_xlsx(TAXON_fuzzy, "./output/TAXON_fuzzy.xlsx")
 # Export only data with correct species names
 table(df_dico$VALIDATION_NAME, useNA = "always")
 
+# Add a column to check if the species is in the checklist
+df_valid <- df_valid %>% 
+  mutate(isChecklist = ifelse(scientificName %in% checklist$scientificName, "TRUE", "FALSE"))
+
+# Check values:
+table(df_valid$isChecklist, useNA = "always")
+
 df_valid <- filter(df_dico, VALIDATION_NAME == "OK") %>% # Keep only validated rows
   # mutate(scientificName = TAXON_TO_EVALUATE, # 
   #        verbatimScientificName = TAXON_ORIGINAL) %>% 
-  select(-VALIDATION_NAME, -TAXON_DICO, -TAXON_ORIGINAL, -TAXON_TO_EVALUATE)
+  select(-VALIDATION_NAME, -TAXON_DICO, -TAXON_ORIGINAL, -TAXON_TO_EVALUATE, -isChecklist)
 
 # Check the number of rows
 nrow(df0) - nrow(df_valid)
 
 # Export with fwrite
-fwrite(df_valid, paste0("./data/working_directory/02_scientificName_validation_", Sys.Date(), ".csv"),
+fwrite(df_valid, paste0("./data/working_directory/03_scientificName_validation_", Sys.Date(), ".csv"),
        sep = ";", dec = ".", row.names = FALSE)
 
 # Remove objects from memory
