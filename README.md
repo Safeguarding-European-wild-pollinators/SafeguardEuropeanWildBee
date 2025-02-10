@@ -1,6 +1,6 @@
 # Data Cleaning Scripts for SAFEGUARD project data
 
-This repository contains the scripts we used to clean and process the data for the data paper titled _A synthesized dataset of wild bees and hoverflies occurrences in Europe_ on spatial data of **wild bees** from the SAFEGUARD project. These scripts are intended to facilitate data cleaning and transformation for reuse and adaptation in similar projects.
+This repository contains the scripts used to clean and process data for the data paper "_A Synthesized Dataset of Wild Bees and Hoverfly Occurrences in Europe_" based on spatial data of **wild bees** from the SAFEGUARD project. These scripts are designed to streamline data cleaning and transformation, making them easily reusable and adaptable for similar projects.
 
 # Description
 
