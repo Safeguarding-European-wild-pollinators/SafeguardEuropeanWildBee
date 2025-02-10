@@ -19,23 +19,6 @@ This project does **not** include steps such as:
 - **Data Encoding**: Encoding new data.
 - **Spatial Data Validation**: Spatial data validation process in collaboration with expert taxonomists and national experts.
 
-
-# Data Sources and Attribution
-
-The following external sources were used to ensure the accuracy and reliability of the dataset:
-
-- **Taxonomic Assignment**: The taxonomic ranks (family, subfamily, tribe, genus, and subgenus) were assigned based on:
-> [Reverte et al. (2023)](https://www.researchgate.net/publication/373865563_National_records_of_3000_European_bee_and_hoverfly_species_A_contribution_to_pollinator_conservation): National records of 3000 European bee and hoverfly species: A contribution to pollinator conservation (DOI: [10.1111/icad.12680](10.1111/icad.12680).
-
-- **Scientific Name Validation**: Species names were verified using:
-> [Ghisbain et al. (2023)](https://www.researchgate.net/publication/373048571_The_new_annotated_checklist_of_the_wild_bees_of_Europe_Hymenoptera_Anthophila): The new annotated checklist of the wild bees of Europe (Hymenoptera: Anthophila) (DOI: [10.11646/zootaxa.5327.1.1](10.11646/zootaxa.5327.1.1).
-
-- **Geographical Assignment**: The country and sub-country assignments were performed using shapefiles from the European Commission:
-> [Urbano, Ferdinando (2018)](http://data.europa.eu/89h/jrc-10112-10004): Global administrative boundaries. European Commission, Joint Research Centre (JRC) [Dataset] PID: [http://data.europa.eu/89h/jrc-10112-10004](http://data.europa.eu/89h/jrc-10112-10004).
-
-
-The scripts are designed to be easily adaptable to similar datasets, and you are welcome to reuse and modify the code as needed, provided proper attribution is given.
-
 # Requirements
 
 To run the scripts, you'll need:
@@ -62,16 +45,32 @@ To use the scripts, simply follow these steps:
 
 5. Modify the scripts as needed for your specific dataset or research requirements.
 
+# Data Sources and Attribution
+
+The following external sources were used to ensure the accuracy and reliability of the dataset:
+
+- **Taxonomic Assignment**: The taxonomic ranks (family, subfamily, tribe, genus, and subgenus) were assigned based on:
+> [Reverte et al. (2023)](https://www.researchgate.net/publication/373865563_National_records_of_3000_European_bee_and_hoverfly_species_A_contribution_to_pollinator_conservation): National records of 3000 European bee and hoverfly species: A contribution to pollinator conservation (DOI: [10.1111/icad.12680](10.1111/icad.12680).
+
+- **Scientific Name Validation**: Species names were verified using:
+> [Ghisbain et al. (2023)](https://www.researchgate.net/publication/373048571_The_new_annotated_checklist_of_the_wild_bees_of_Europe_Hymenoptera_Anthophila): The new annotated checklist of the wild bees of Europe (Hymenoptera: Anthophila) (DOI: [10.11646/zootaxa.5327.1.1](10.11646/zootaxa.5327.1.1).
+
+- **Geographical Assignment**: The country and sub-country assignments were performed using shapefiles from the European Commission:
+> [Urbano, Ferdinando (2018)](http://data.europa.eu/89h/jrc-10112-10004): Global administrative boundaries. European Commission, Joint Research Centre (JRC) [Dataset] PID: [http://data.europa.eu/89h/jrc-10112-10004](http://data.europa.eu/89h/jrc-10112-10004).
+
+- **Geographical Assignment**: The sub-country assignments were performed using shapefiles from the World Geographical Scheme for Recording Plant Distributions (WGSRPD):
+> [R. K. Brummitt (2001)](http://data.europa.eu/89h/jrc-10112-10004): World Geographic Scheme for Recording Plant Distributions, Edition 2. Hunt Institute for Botanical Documentation, Carnegie Mellon University (Pittsburgh). http://rs.tdwg.org/wgsrpd/doc/data/ [http://rs.tdwg.org/wgsrpd/doc/data/](http://rs.tdwg.org/wgsrpd/doc/data/).
+
+## Script attribution
+The scripts are designed to be easily adaptable to similar datasets, and you are welcome to reuse and modify the code as needed, provided proper attribution is given. If you use this code or adapt it for your own work, please provide attribution by citing the repository as follows:
+
+    "Scripts for Safeguard data cleaning provided by Jordan Benrezkallah (GitHub: https://github.com/JordanBZK/)."
+
 # License
 
 This project is licensed under the MIT License.
 You are free to use, modify, and distribute the code, as long as you provide appropriate credit to the original author.
 
-# Attribution
-
-If you use this code or adapt it for your own work, please provide attribution by citing the repository as follows:
-
-    "Scripts for Safeguard data cleaning provided by Jordan Benrezkallah (GitHub: https://github.com/Jack177)."
 
 # Contact
 
