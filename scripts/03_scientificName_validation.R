@@ -4,7 +4,7 @@ library(fuzzyjoin) # More information: https://www.statology.org/fuzzy-matching-
 
 # Import ----
 # Import all data
-df <- fread(paste0("./data/working_directory/02_data_import_", Sys.Date(), ".csv"), header = TRUE, 
+df <- fread(paste0("./data/working_directory/02_quality_check_", Sys.Date(), ".csv"), header = TRUE, 
             sep = ";", dec = ".", strip.white = FALSE, encoding = "Latin-1")
 df0 <- df # Save the original data
 
@@ -19,7 +19,7 @@ checklist <- fread("./data/wildBeeChecklist.csv", header = TRUE,
 # Data wrangling ----
 # Add a column to check if the species is in the checklist
 df <- df %>% 
-  mutate(isChecklist = ifelse(scientificName %in% checklist$scientificName, "TRUE", "FALSE"))
+  mutate(isChecklist = ifelse(scientificName %in% checklist$scientificName, TRUE, FALSE))
 
 # Check values:
 table(df$isChecklist, useNA = "always")
@@ -29,9 +29,7 @@ table(df$isChecklist, useNA = "always")
 # If the current taxon has not been filled in, add the original name.
 # This ensures that scientific name information has not been lost, as scientificName will be overwritten later.
 df <- mutate(df,
-             verbatimScientificName = if_else(is.na(verbatimScientificName), scientificName, verbatimScientificName),
-             scientificName = if_else(is.na(scientificName), verbatimScientificName, scientificName)
-)
+             verbatimScientificName = scientificName)
 
 
 # Validation name process ----
@@ -117,17 +115,22 @@ write_xlsx(TAXON_fuzzy, "./output/TAXON_fuzzy.xlsx")
 # Export only data with correct species names
 table(df_dico$VALIDATION_NAME, useNA = "always")
 
-# Add a column to check if the species is in the checklist
-df_valid <- df_valid %>% 
-  mutate(isChecklist = ifelse(scientificName %in% checklist$scientificName, "TRUE", "FALSE"))
+# # Add a column to check if the species is in the checklist
+# df_dico <- df_dico %>% 
+#   mutate(isChecklist = ifelse(scientificName %in% checklist$scientificName, TRUE, FALSE))
 
 # Check values:
-table(df_valid$isChecklist, useNA = "always")
+table(df_dico$isChecklist, useNA = "always")
 
-df_valid <- filter(df_dico, VALIDATION_NAME == "OK") %>% # Keep only validated rows
+# Check species not listed in the checklist
+is_not_in_checklist <- filter(df_dico, isChecklist == FALSE)
+
+# Keep only validated rows
+df_valid <- filter(df_dico, VALIDATION_NAME == "OK") %>% 
   # mutate(scientificName = TAXON_TO_EVALUATE, # 
   #        verbatimScientificName = TAXON_ORIGINAL) %>% 
   select(-VALIDATION_NAME, -TAXON_DICO, -TAXON_ORIGINAL, -TAXON_TO_EVALUATE, -isChecklist)
+
 
 # Check the number of rows
 nrow(df0) - nrow(df_valid)
