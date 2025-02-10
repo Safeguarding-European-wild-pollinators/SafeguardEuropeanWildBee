@@ -11,6 +11,7 @@ This project includes several essential data cleaning steps to prepare spatial d
 - **Scientific Names Validation**: Ensuring that all species names are consistent with those used in Ghisbain et al. (2023).
 - **Data Quality Check**: Identifying missing, erroneous, or outlier values in the dataset.
 - **Taxonomic Assignment**: Assigning each species to its correct taxonomic rank (family, genus, etc.).
+- **Geographical Assignment**: Assigning administrative level (country, state province and county). 
 - **Batch Mapping**: Automatically generating maps for each species based on geographic coordinates.
 
 This project does **not** include steps such as:
@@ -39,9 +40,11 @@ To use the scripts, simply follow these steps:
 3. Prepare your dataset according to the format described in metadata documentation (metadata.csv).
 4. Run the individual scripts in the same order. 
     - `01_data_import.R`
-    - `02_scientificName_validation.R`
-    - `03_taxonomy_classification.R`
-    - `04_quality_check.R`
+    - `02_quality_check.R`
+    - `03_scientificName_validation.R`
+    - `04_taxonomy_classification.R`
+    - `05_administrative_level.R`
+    - `06_batch_map.R`
 
 5. Modify the scripts as needed for your specific dataset or research requirements.
 
