@@ -1,6 +1,8 @@
 # Define the list of required packages
 required_packages <- c(
   "data.table",
+  "summarytools",
+  "visdat",
   "ggplot2",
   "dplyr",
   "purrr",
@@ -12,6 +14,7 @@ required_packages <- c(
   "scales",
   "red",
   "visdat",
+  "naniar",
   "summarytools",
   "sf",
   "rnaturalearth",

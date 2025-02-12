@@ -23,12 +23,14 @@ library(rnaturalearthdata)  # Data for rnaturalearth
 library(writexl)      # Write data to Excel format
 library(readxl)       # Read Excel files
 library(visdat)       # Visualizing missing data
+library(naniar)       # Overviewing data
 
 # Tools
 library(red)          # IUCN Redlist Tools
 
 # Summarizing and reporting
 library(summarytools) # Summary statistics and tables for data exploration
+library(visdat)       # Visualizing missing data
 
 # Parallel processing
 library(parallel)     # Parallel computing for faster processing of large datasets

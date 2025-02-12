@@ -21,9 +21,9 @@ check_integers <- function(df, column) {
 # Check min and max values in specified columns
 check_value_range <- function(df, columns, min_threshold, max_threshold) {
   for (col in columns) {
-    # Vérifier si la colonne est de type numérique ou entier
+    # Check if the column is of numeric or integer type
     if (is.numeric(df[[col]]) || is.integer(df[[col]])) {
-      # Obtenir les valeurs minimales et maximales en ignorant les NA
+      # Get min and max values ignoring NA
       min_value <- min(df[[col]], na.rm = TRUE)
       max_value <- max(df[[col]], na.rm = TRUE)
       
