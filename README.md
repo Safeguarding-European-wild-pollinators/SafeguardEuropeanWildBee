@@ -52,8 +52,9 @@ To use the scripts, simply follow these steps:
 
 The following external sources were used to ensure the accuracy and reliability of the dataset:
 
-- **Taxonomic Assignment**: The taxonomic ranks (family, subfamily, tribe, genus, and subgenus) were assigned based on:
+- **Taxonomic Assignment**: The taxonomic ranks (family, subfamily, tribe, genus, and subgenus) were assigned based on: 
     > [Reverte et al. (2023)](https://www.researchgate.net/publication/373865563): National records of 3000 European bee and hoverfly species: A contribution to pollinator conservation (DOI: [10.1111/icad.12680](https://resjournals.onlinelibrary.wiley.com/doi/10.1111/icad.12680).
+    Scientific names have been updated and standardized to match the checklist (Ghisbain et al. 2023).
 
 - **Scientific Name Validation**: Species names were verified using:
     > [Ghisbain et al. (2023)](https://www.researchgate.net/publication/373048571_The_new_annotated_checklist_of_the_wild_bees_of_Europe_Hymenoptera_Anthophila): The new annotated checklist of the wild bees of Europe (Hymenoptera: Anthophila) (DOI: [10.11646/zootaxa.5327.1.1](https://mapress.com/zt/article/view/zootaxa.5327.1.1).
