@@ -25,8 +25,8 @@ df <- df %>%
 table(df$isChecklist, useNA = "always")
 
 # Ensure that scientific names have been completed
-# If the original taxon is empty, add the current name.
-# If the current taxon has not been filled in, add the original name.
+# If the original scientificName is empty, add the current name.
+# If the current scientificName has not been filled in, add the original name.
 # This ensures that scientific name information has not been lost, as scientificName will be overwritten later.
 df <- mutate(df,
              verbatimScientificName = scientificName)
@@ -44,7 +44,7 @@ df_dico <- copy(df) # Used as a backup
 df_dico[dictionary, c("TAXON_DICO") := .(TAXON_DICO),
         on = .(TAXON_TO_EVALUATE = TAXON_ERRORS)]
 ## Create a "VALIDATION_NAME" column determined by the value of "TAXON_DICO".
-# If it is not a valid name in the dictionnary ("-" value), it's correspond to DELETE value, if it's correct the value is "OK", otherwise the value is NA.
+# If it is not a valid name in the dictionary ("-" value), it's correspond to DELETE value, if it's correct the value is "OK", otherwise the value is NA.
 df_dico <- mutate(df_dico, VALIDATION_NAME = ifelse(is.na(TAXON_DICO), NA, ifelse(TAXON_DICO == "-", "DELETE", "OK"))) 
 df_dico <- mutate(df_dico, 
                   VALIDATION_NAME = ifelse(is.na(TAXON_TO_EVALUATE), "DELETE",        # If TAXON_TO_EVALUATE is NA, then VALIDATION_NAME is "DELETE".
@@ -109,6 +109,7 @@ TAXON_fuzzy <- stringdist_join(TAXON_invalid, TAXON_dico,
 # Export ----
 ## export Fuzzy name ----
 # Export the fuzzy name to an Excel file
+dir.create("./output", showWarnings = FALSE)
 write_xlsx(TAXON_fuzzy, "./output/TAXON_fuzzy.xlsx") 
 
 ## export validated data ----
