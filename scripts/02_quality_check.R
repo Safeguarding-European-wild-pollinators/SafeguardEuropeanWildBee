@@ -52,7 +52,6 @@ table(df$datasetName,      useNA = "always")
 table(df$datasetProvider,  useNA = "always")
 table(df$datasetSource,    useNA = "always")
 table(df$license,          useNA = "always")
-table(df$occurrenceID,     useNA = "always")
 
 # Specimen data ----
 ## scientificName ----
