@@ -60,6 +60,7 @@ table(df$license,          useNA = "always")
 
 ## occurrenceID ----
 ### occurrenceID NA ----
+# It is essential that the dataset has no duplicates, as the following codes may not work as expected
 # Check for missing occurrenceID values
 (sum(is.na(df$occurrenceID)) )
 # Identify file names with missing occurrenceID values
