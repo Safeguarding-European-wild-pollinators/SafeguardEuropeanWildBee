@@ -36,7 +36,7 @@ source('install_packages.R')
 # Usage
 To use the scripts, simply follow these steps:
 1. Clone or download the repository to your local machine.
-2. Install the required packages by running source('library.R').
+2. Install the required packages by running source('install_packages.R').
 3. Prepare your dataset according to the format described in metadata documentation (metadata.csv).
 4. Run the individual scripts in the same order. 
     - `01_data_import.R`
