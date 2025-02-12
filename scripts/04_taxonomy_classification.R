@@ -16,18 +16,9 @@ taxonomy <- fread("./data/wildBeeClassification.csv", header = TRUE,
 (sum(is.na(df$scientificName)))
 
 # Taxonomic classification ----
-## Save the original taxonomic classification ----
-# Ensure that original taxonomic classification have been filled
-# If the original classification is empty, add the current name. The current classification will be overwritten after with taxonomy dataframe.
-df <- mutate(df,
-             verbatimScientificNameAuthorship = scientificNameAuthorship,
-             verbatimFamily                   = family,
-             verbatimSubfamily                = subfamily,
-             verbatimTribe                    = tribe,
-             verbatimGenus                    = genus,
-             verbatimSubgenus                 = subgenus,
-             verbatimSpecificEpithet          = specificEpithet
-) %>% 
+# Taxonomy fields will be overwritten with new values based on the “taxonomy” object, based on scientificName
+# Old fields will be removed
+df <- df %>% 
   select(
     -c(scientificNameAuthorship, order, family, subfamily, tribe, genus, subgenus, specificEpithet)
   )
