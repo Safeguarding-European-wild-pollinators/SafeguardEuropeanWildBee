@@ -1,3 +1,6 @@
+# First, don't forget to install the packages if you haven't done it yet
+# source('install_packages.R')
+
 # Library ----
 source("./library.R", echo = FALSE)
 
