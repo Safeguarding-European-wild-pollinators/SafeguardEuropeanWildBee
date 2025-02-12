@@ -1,4 +1,4 @@
-TAXON_ERROR;TAXON_NEW;Included in ERL 2024
+TAXON_ERRORS;TAXON_NEW;Included in ERL 2024
 -;-;No
 Andrena alma;Andrena alma;Yes
 Andrena antonellae;Andrena antonellae;Yes
@@ -1530,7 +1530,7 @@ Andrena zhelokhovtzevi;Andrena zhelokhovtzevi;No
 Andrena ziminae;Andrena ziminae;No
 Andrena zostera;Andrena zostera;No
 Andrena zuvandiana;Andrena zuvandiana;No
-Andrena albopunctata;Andrena albopunctata;Yes
+Andrena albopunctata;Andrena albopunctata;Yes
 Anthidiellum (Anthidiellum) strigatum;Anthidiellum strigatum;Yes
 Anthidiellum breviusculum;Anthidiellum breviusculum;Yes
 Anthidiellum breviusculum palaestinense;Anthidiellum breviusculum;Yes
@@ -3073,7 +3073,7 @@ Creightonella cognatiforme;Megachile cognatiforme;No
 Creightonella commixta;Megachile commixta;No
 Creightonella discolor;Megachile discolor;No
 Creightonella felix;Megachile felix;No
-Creightonella ianthoptera consanguinea;Megachile ianthoptera ;No
+Creightonella ianthoptera consanguinea;Megachile ianthoptera ;No
 Creightonella mediorufa;Megachile mediorufa;No
 Creightonella mixta;Megachile mixtura;No
 Creightonella rubrigena;Megachile rubrigena;No
@@ -3555,7 +3555,7 @@ Flavomeliturgula deserta;Flavomeliturgula deserta;No
 Flavomeliturgula lacrymosa;Flavomeliturgula lacrymosa;No
 Flavomeliturgula schwarziana;Flavomeliturgula schwarziana;No
 Flavomeliturgula tapana;Flavomeliturgula tapana;No
-Frieseomelitta paupera;Frieseomelitta paupera;No
+Frieseomelitta paupera;Frieseomelitta paupera;No
 Gasparinahla megapalpae;Gasparinahla megapalpae;No
 Glazunovia nigriceps;Tetralonia nigriceps;No
 Goeletapis peruensis;Goeletapis peruensis;No
@@ -3918,7 +3918,7 @@ Halictus wollmanni;Seladonia wollmanni;No
 Halictus xanthoprymnus;Halictus xanthoprymnus;No
 Halictus xanthopus;Lasioglossum xanthopus;Yes
 Halictus zostaceus;Lasioglossum zostaceum;No
-Halictus cochlearitarsis;Halictus cochlearitarsis;Yes
+Halictus cochlearitarsis;Halictus cochlearitarsis;Yes
 Halopanurgus fuzetus;Halopanurgus fuzetus;Yes
 Haplomelitta atra;Haplomelitta atra;No
 Haplomelitta fasciata;Haplomelitta fasciata;No
@@ -4391,7 +4391,7 @@ Icteranthidium laterale;Icteranthidium laterale;Yes
 Icteranthidium laterale ;Icteranthidium laterale;Yes
 Icteranthidium laterale scutellare;Icteranthidium laterale;Yes
 Icteranthidium sp.;-;No
-Icteranthidium  abbasi;Icteranthidium abbasi;No
+Icteranthidium  abbasi;Icteranthidium abbasi;No
 Icteranthidium  angulosum;Icteranthidium angulosum;No
 Lasioglosssum cupromicans;Lasioglossum cupromicans;Yes
 Lasioglossum;-;No
@@ -6066,7 +6066,7 @@ Osmia cadiza;Hoplitis cadiza;Yes
 Osmia caerulescens;Osmia caerulescens;Yes
 Osmia caerulescens ;Osmia caerulescens;Yes
 Osmia caerulescens caerulescens;Osmia caerulescens;Yes
-Osmia caerulescens ;Osmia caerulescens;Yes
+Osmia caerulescens ;Osmia caerulescens;Yes
 Osmia canthabrica;Chelostoma distinctum;Yes
 Osmia carneiventris;Osmia niveata;Yes
 Osmia cephalotes;Osmia cephalotes;Yes
@@ -6841,7 +6841,7 @@ Rophites trispinosus;Rophites algirus;Yes
 Rophites tunesius;Dufourea punica;No
 Rophitoides epiroticus ;Rhophitoides epiroticus;Yes
 Scaptotrigona mexicana;Scaptotrigona mexicana;No
-Scaptotrigona pectoralis;Scaptotrigona pectoralis;No
+Scaptotrigona pectoralis;Scaptotrigona pectoralis;No
 Schmiedeknechtia brevicornis;Schmiedeknechtia brevicornis;No
 Schmiedeknechtia oraniensis;Schmiedeknechtia oraniensis;Yes
 Schmiedeknechtia verhoeffi;Schmiedeknechtia verhoeffi;No
@@ -7415,7 +7415,7 @@ Amegilla  salviae;Amegilla salviae;Yes
 Andrena (Andrena);-;No
 Andrena (Ulandrena);-;No
 Andrena alutacae;Andrena alutacea;Yes
-Andrena blüthgeni;Andrena bimaculata;Yes
+Andrena bl thgeni;Andrena bimaculata;Yes
 Andrena clypeata;Andrena brumanensis;Yes
 Andrena cremobia;Andrena eremobia;No
 Andrena elsei;Andrena elsei;No
