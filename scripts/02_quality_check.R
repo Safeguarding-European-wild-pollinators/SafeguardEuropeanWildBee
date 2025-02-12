@@ -331,6 +331,12 @@ ggplot(latitude_distribution, aes(x = as.numeric(as.character(decimalLatitude)),
   labs(title = "Latitude distribution", x = "Latitude", y = "Frequency") +
   theme(axis.text.x = element_text(angle = 90, hjust = 1))
 
+# Check the minimum and maximum values
+min_threshold_latitude <- -90
+max_threshold_latitude <- 90
+check_value_range(df, c("decimalLatitude"), 
+                  min_threshold = min_threshold_latitude, max_threshold = max_threshold_latitude)
+
 ### longitude plot ----
 # Create a dataframe counting occurrences of each unique longitude
 longitude_distribution <- as.data.frame(table(df$decimalLongitude))
@@ -347,10 +353,18 @@ ggplot(longitude_distribution, aes(x = as.numeric(as.character(decimalLongitude)
   labs(title = "Longitude distribution", x = "Longitude", y = "Frequency") +
   theme(axis.text.x = element_text(angle = 90, hjust = 1))
 
+# Check the minimum and maximum values
+min_threshold_longitude <- -180
+max_threshold_longitude <- 180
+check_value_range(df, c("decimalLongitude"), 
+                  min_threshold = min_threshold_longitude, max_threshold = max_threshold_longitude)
+
 
 # Coordinates provided ----
 (sum(is.na(df$manualGeoreferencing)) )
 cat("Percentage of NA (manualGeoreferencing):\n", sum(is.na(df$manualGeoreferencing))/ nrow(df)*100, "% \n")
+table(df$manualGeoreferencing, useNA = "always")
+
 
 ## plot NA % ----
 provided_percentage <- df %>%

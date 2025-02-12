@@ -25,6 +25,7 @@ europe_3035 <- st_transform(europe_3035, projection_3035)
 
 ## /!\ You have to remove data without coordinates /!\
 df_distribution <- df
+# Remove rows with missing coordinates
 df_distribution <- df_distribution[complete.cases(df_distribution$decimalLongitude, df_distribution$decimalLatitude), ]
 # Check the number of rows lost
 nrow(df)-nrow(df_distribution)
@@ -32,6 +33,9 @@ nrow(df)-nrow(df_distribution)
 # Converting the df_distribution DataFrame into a simple feature
 # If you import directly in CRS = 3035, there are some issues with the coordinates
 df_geometry <- st_as_sf(df_distribution, coords = c("decimalLongitude", "decimalLatitude"), crs = 4326, remove = FALSE)  
+
+# df_db will be used to output xlsx and csv files
+# df_map will be used to generate maps
 # Transformation of the simple feature df_distribution to the ETRS89-extended projection
 df_db <- st_transform(df_geometry, projection_3035)
 
