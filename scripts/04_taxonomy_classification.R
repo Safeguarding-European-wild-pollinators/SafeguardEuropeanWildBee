@@ -3,13 +3,13 @@ source("./library.R", echo = FALSE)
 
 # Import  ---- 
 df <- fread(paste0("./data/working_directory/03_scientificName_validation_", Sys.Date(), ".csv"), header = TRUE, 
-            sep = ";", dec = ".", strip.white = FALSE, encoding = "UTF-8")
+            sep = ";", dec = ".", strip.white = FALSE, encoding = "Latin-1")
 
 df0 <- df
 
 # Data with the taxonomic classification of wild bees
 taxonomy <- fread("./data/wildBeeClassification.csv", header = TRUE, 
-                  sep = ";", strip.white = TRUE, encoding = "UTF-8")
+                  sep = ";", strip.white = TRUE, encoding = "Latin-1")
 
 ## scientificName ----
 # Check scientificName, if there are NA values
