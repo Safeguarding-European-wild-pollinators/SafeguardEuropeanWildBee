@@ -27,7 +27,7 @@ check_value_range <- function(df, columns, min_threshold, max_threshold) {
       min_value <- min(df[[col]], na.rm = TRUE)
       max_value <- max(df[[col]], na.rm = TRUE)
       
-      # Vérification des seuils
+      # Check the thresholds
       if (max_value > max_threshold) {
         print(paste("WARNING: The column '", col, "' has a max value greater than ", max_threshold, ". Max value: ", max_value, sep = ""))
       } else {
