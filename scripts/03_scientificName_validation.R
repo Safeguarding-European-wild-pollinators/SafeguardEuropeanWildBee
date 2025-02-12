@@ -10,11 +10,11 @@ df0 <- df # Save the original data
 
 # Import dictionary
 dictionary <- fread("./data/wildBeeDictionary.csv", header = TRUE, 
-                    sep = ";", dec = ".", strip.white = FALSE, encoding = "UTF-8")
+                    sep = ";", dec = ".", strip.white = FALSE, encoding = "Latin-1")
 
 # Import checklist (list of species)
 checklist <- fread("./data/wildBeeChecklist.csv", header = TRUE, 
-                    sep = ";", dec = ".", strip.white = FALSE, encoding = "UTF-8")
+                    sep = ";", dec = ".", strip.white = FALSE, encoding = "Latin-1")
 
 # Data wrangling ----
 # Add a column to check if the species is in the checklist
