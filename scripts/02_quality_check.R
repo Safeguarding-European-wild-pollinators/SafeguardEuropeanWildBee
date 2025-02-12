@@ -207,13 +207,15 @@ df <- df %>% mutate(eventDate = paste0(yearEnd, "-", monthEnd, "-", dayEnd))
 (sum(is.na(df$decimalLatitude)) )
 (sum(is.na(df$decimalLongitude)) )
 
-### NA % ----
+### non-NA % ----
+### Calculate and display the percentage and count of non-NA decimalLatitude values
 cat("Percentage of decimalLatitude values: ", "\n", sum(!is.na(df$decimalLatitude)) / nrow(df) * 100, "%", "\n", "\n",
     "Row number of decimalLatitude values:", "\n", sum(!is.na(df$decimalLatitude)), "\n",
     "Total number of rows:", "\n", nrow(df), "\n")
 # show the file names with NA values
 (file_names <- df %>% filter(is.na(decimalLatitude)) %>% pull(FILE_NAME) %>%  unique() )
 
+### Calculate and display the percentage and count of non-NA decimalLongitude values
 cat("Percentage of decimalLongitude values: ", "\n", sum(!is.na(df$decimalLongitude)) / nrow(df) * 100, "%", "\n", "\n",
     "Row number of LONGITUDE values:", "\n", sum(!is.na(df$decimalLongitude)), "\n",
     "Total number of rows:", "\n", nrow(df), "\n")
@@ -240,29 +242,39 @@ ggplot(na_percentage, aes(x = FILE_NAME, y = na_percentage)) +
        y = "Percentage of NA values") +
   theme(axis.text.x = element_text(angle = 90, hjust = 1))
 
-###  as.numeric ----
-####  lost after conversion ----
+### Convert to numeric ----
+### This step ensures that coordinate values are numeric before spatial data processing.
+### It helps detect incorrect formatting, such as commas (",") instead of decimal points ("."), 
+### which could cause issues during data wrangling.
+
+#### Detect values lost after conversion ----
+# Count the number of NA values in decimalLatitude and decimalLongitude before conversion
 na_before_latitude <- sum(is.na(df$decimalLatitude))
 na_before_longitude <- sum(is.na(df$decimalLongitude))
 
+# Convert coordinates to numeric
 df2 <- df %>%
   mutate(
     decimalLatitude = as.numeric(decimalLatitude),
     decimalLongitude = as.numeric(decimalLongitude)
   )
 
+# Count the number of NA values after conversion
 na_after_latitude <- sum(is.na(df2$decimalLatitude))
 na_after_longitude <- sum(is.na(df2$decimalLongitude))
 
+# Calculate how many values were transformed into NA due to conversion issues
 na_converted_latitude <- na_after_latitude - na_before_latitude
 na_converted_longitude <- na_after_longitude - na_before_longitude
 
-cat("Number of values transformed into NA for LATITUDE : ", na_converted_latitude, "\n")
-cat("Number of values transformed into NA for LONGITUDE : : ", na_converted_longitude, "\n")
+# Display the number of values lost during conversion
+cat("Number of values transformed into NA for LATITUDE: ", na_converted_latitude, "\n")
+cat("Number of values transformed into NA for LONGITUDE: ", na_converted_longitude, "\n")
 
 # Check if there are incorrect characters
 df_no_numerique <- df[!grepl("^[0-9.]+$", df$decimalLatitude), ]
 table(df_no_numerique$decimalLatitude)
+
 
 #### conversion ----
 # Convert the decimal separator “,” to “.”
@@ -376,7 +388,8 @@ ggplot(country, aes(x = country, y = FREQUENCY, fill = country)) +
        y = "Number of rows") +  # Y-axis label
   geom_text(aes(label = FREQUENCY), vjust = -0.5, color = "black", size = 3) +
   theme_minimal() +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+  theme(axis.text.x = element_text(angle = 45, hjust = 1),
+        legend.position = "none")
 
 # Export ----
 # Check if rows were deleted
