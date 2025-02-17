@@ -1,8 +1,15 @@
-# Data Cleaning Scripts for SAFEGUARD project data
+# Project description
 
-This repository contains the scripts used to clean and process data for the data paper "_A Synthesized Dataset of Wild Bees and Hoverfly Occurrences in Europe_" based on spatial data of **wild bees** from the SAFEGUARD project. These scripts are designed to streamline data cleaning and transformation, making them easily reusable and adaptable for similar projects.
+This repository contains the scripts used to clean and process data for the data paper of Sentil et al. 2025, "_A Synthesized Dataset of Wild Bees and Hoverfly Occurrences in Europe_" based on spatial data of **wild bees** from the SAFEGUARD project. These scripts are designed to streamline data cleaning and transformation, making them easily reusable and adaptable for similar projects.
 
-# Description
+## Project funding
+This work has been funded by:
+
+**SAFEGUARD** (Safeguarding European wild pollinators). Horizon 2020 (No. 101003476). Task 1.1:  Compiling distributional data on European pollinators at EU and national levels.
+
+**PULSE** (Providing technical and scientific support in measuring the pulse of European biodiversity using the Red List Index, contract No. 07.027755/2020/840209/SER/ENV.D.2.).
+
+# Script description
 
 This project includes several essential data cleaning steps to prepare spatial data of **wild bees** for analysis, including:
 
@@ -20,7 +27,7 @@ This project does **not** include steps such as:
 - **Data Encoding**: Encoding new data.
 - **Spatial Data Validation**: Spatial data validation process in collaboration with expert taxonomists and national experts.
 
-# Requirements
+# Script requirements
 
 To run the scripts, you'll need:
 
@@ -53,10 +60,10 @@ To use the scripts, simply follow these steps:
 The following external sources were used to ensure the accuracy and reliability of the dataset:
 
 - **Scientific Name Validation**: Species names were verified using:
-    > [Ghisbain et al. (2023)](https://www.researchgate.net/publication/373048571_The_new_annotated_checklist_of_the_wild_bees_of_Europe_Hymenoptera_Anthophila): The new annotated checklist of the wild bees of Europe (Hymenoptera: Anthophila) (DOI: [10.11646/zootaxa.5327.1.1](https://mapress.com/zt/article/view/zootaxa.5327.1.1).
+    > [Ghisbain, Rosa et al. (2023)](https://www.researchgate.net/publication/373048571_The_new_annotated_checklist_of_the_wild_bees_of_Europe_Hymenoptera_Anthophila): The new annotated checklist of the wild bees of Europe (Hymenoptera: Anthophila) (DOI: [10.11646/zootaxa.5327.1.1](https://mapress.com/zt/article/view/zootaxa.5327.1.1).
 
 - **Taxonomic Assignment**: The taxonomic ranks (family, subfamily, tribe, genus, and subgenus) were assigned based on: 
-    > [Reverte et al. (2023)](https://www.researchgate.net/publication/373865563): National records of 3000 European bee and hoverfly species: A contribution to pollinator conservation (DOI: [10.1111/icad.12680](https://resjournals.onlinelibrary.wiley.com/doi/10.1111/icad.12680).
+    > [Reverte, Milicic et al. (2023)](https://www.researchgate.net/publication/373865563): National records of 3000 European bee and hoverfly species: A contribution to pollinator conservation (DOI: [10.1111/icad.12680](https://resjournals.onlinelibrary.wiley.com/doi/10.1111/icad.12680).
     Note : scientific names have been updated and standardized to match the European checklist (Ghisbain et al. 2023): _Hylaeus longimacula_ --> _Hylaeus longimaculus_, _Dioxys atlanticus_ --> _Dioxys atlantica_, _Dioxys cinctus_ --> _Dioxys cincta_, _Dioxys moestus_ --> _Dioxys moesta_, _Dioxys pumilus_ --> _Dioxys pumila_. Note2: two species (_Bombus bisiculus_ & _Seladonia pici_) are not present in the European checklist.
 
 -  **Country and state province assignments**: The country and state province assignments were performed using shapefiles based on the World Geographical Scheme for Recording Plant Distributions (WGSRPD):
