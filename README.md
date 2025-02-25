@@ -17,7 +17,7 @@ This project includes several essential data cleaning steps to prepare spatial d
 - **Data Import, Preprocessing, and Aggregation**: Importing raw data, cleaning it, and aggregating it for consistency.
 - **Scientific Names Validation**: Ensuring that all species names are consistent with those used in Ghisbain et al. (2023).
 - **Data Quality Check**: Identifying missing, erroneous, or outlier values in the dataset.
-- **Taxonomic Assignment**: Assigning each species to its correct taxonomic rank (family, genus, etc.).
+- **Taxonomic Assignment**: Assigning each species to its correct taxonomic rank (order, family, subfamily, tribes and subgenus).
 - **Geographical Assignment**: Assigning administrative level (country, state province and county). 
 - **Batch Mapping**: Automatically generating maps for each species based on geographic coordinates.
 
