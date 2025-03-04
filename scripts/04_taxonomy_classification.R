@@ -11,6 +11,7 @@ df0 <- df
 taxonomy <- fread("./data/wildBeeClassification.csv", header = TRUE, 
                   sep = ";", strip.white = TRUE, encoding = "Latin-1")
 
+
 ## scientificName ----
 # Check scientificName, if there are NA values
 (sum(is.na(df$scientificName)))
@@ -19,6 +20,9 @@ taxonomy <- fread("./data/wildBeeClassification.csv", header = TRUE,
 # Taxonomy fields will be overwritten with new values based on the “taxonomy” object, based on scientificName
 # Old fields will be removed
 df <- df %>% 
+  select(
+    -c(scientificNameAuthorship, genus)
+  )
   select(
     -c(scientificNameAuthorship, order, family, subfamily, tribe, genus, subgenus, specificEpithet)
   )
@@ -29,7 +33,7 @@ df_taxonomy <- merge(df, taxonomy, by = "scientificName", all.x = TRUE)
 
 ## Check classification ----
 df_taxonomy_check <- select(df_taxonomy, scientificName, family, subfamily, tribe, genus, subgenus, specificEpithet, 
-                            verbatimFamily, verbatimGenus, verbatimSubgenus, verbatimSpecificEpithet)
+                            ) %>% unique()
 # Check NA values
 visdat::vis_miss(df_taxonomy_check)
 naniar::gg_miss_var(df_taxonomy_check)  
