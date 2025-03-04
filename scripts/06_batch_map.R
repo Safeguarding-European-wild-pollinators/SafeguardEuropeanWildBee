@@ -53,7 +53,7 @@ df_map <- df_db %>%
   ))
 
 # Remove and order columns
-source("./scripts/06B_select_columns.R", echo = FALSE)
+source("./scripts/select_columns.R", echo = FALSE)
 
 # Check values
 sum(is.na(df_map$YEAR_INTERVAL))
