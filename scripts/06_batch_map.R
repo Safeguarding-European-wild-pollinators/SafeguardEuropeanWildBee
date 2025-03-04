@@ -44,10 +44,10 @@ df_db <- st_transform(df_geometry, projection_3035)
 df_map <- df_db %>% 
   mutate(YEAR_INTERVAL = factor(
     case_when(
-      is.na(yearEnd) ~ "No year",
-      yearEnd < 1970 ~ "<1970",
-      yearEnd >= 1970 & yearEnd <= 2000 ~ "1970-2000", 
-      yearEnd > 2000 ~ ">2000"
+      is.na(endYear) ~ "No year",
+      endYear < 1970 ~ "<1970",
+      endYear >= 1970 & endYear <= 2000 ~ "1970-2000", 
+      endYear > 2000 ~ ">2000"
     ),
     levels = c("No year", "<1970", "1970-2000", ">2000")
   ))
@@ -142,7 +142,7 @@ generate_species_map <- function(df_map, species_name, csv_dir, xlsx_dir, map_di
   
   ## arrange dot ----  
   df_map <- df_map %>%
-    arrange(YEAR_INTERVAL, yearEnd) # prevents NA dots from being covered on top of other dots
+    arrange(YEAR_INTERVAL, endYear) # prevents NA dots from being covered on top of other dots
   
   ## remove DELETE dots ---- 
   filtered_data_map <- df_map %>%

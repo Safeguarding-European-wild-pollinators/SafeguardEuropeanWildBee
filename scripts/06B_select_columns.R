@@ -22,12 +22,12 @@ columns <- c(
   "individualCountEnd",
   
   # Temporal
-  "yearEnd",
-  "monthEnd",
-  "dayEnd",
-  "yearStart",
-  "monthStart",
-  "dayStart",
+  "endYear",
+  "endMonth",
+  "endDay",
+  "startYear",
+  "startMonth",
+  "startDay",
   
   # Spatial
   "country",
