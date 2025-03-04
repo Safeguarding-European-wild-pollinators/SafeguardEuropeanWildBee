@@ -1,4 +1,4 @@
-TAXON_ERROR;TAXON_NEW;Included in ERL 2024
+TAXON_ERRORS;TAXON_DICO;Included in ERL 2024
 ?;-;No
 alpinus Eumerus alpinus Ron;Eumerus alpinus;Yes
 Anasimyia;-;No
@@ -781,7 +781,8 @@ Eumerus uncipes;Eumerus uncipes;Yes
 Eumerus vandenberghei;Eumerus vandenberghei;Yes
 Eumerus vandergooti;-;No
 Eumerus vestitus;Eumerus vestitus;Yes
-Eumerus amoenus;Eumerus amoenus;Yes
+Eumerus
+ amoenus;Eumerus amoenus;Yes
 Eupeodes;-;No
 Eupeodes corollae;Eupeodes corollae;Yes
 Eupeodes lapponicus;Lapposyrphus lapponicus;Yes
@@ -2506,7 +2507,7 @@ Merodon defectus;Merodon defectus;No
 Merodon dichopticus;Merodon dichopticus;No
 Merodon gudaurensis;Merodon gudaurensis;No
 Merodon hakkarensis;Merodon hakkarensis;No
-Merodon hakkariensisÂ;Merodon hakkariensis;No
+Merodon hakkariensis ;Merodon hakkariensis;No
 Merodon hayati;Merodon hayati;No
 Merodon hikmeti;Merodon hikmeti;No
 Merodon hirsutus;Merodon hirsutus;No
