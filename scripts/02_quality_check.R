@@ -92,32 +92,32 @@ check_integers(df, individualCountEnd)
 # Date ----
 ## date type ----
 # Check if date contains any non-integer values (floats or strings)
-check_integers(df, yearStart)
-check_integers(df, monthStart)
-check_integers(df, dayStart)
+check_integers(df, startYear)
+check_integers(df, startMonth)
+check_integers(df, startDay)
 
-check_integers(df, yearEnd)
-check_integers(df, monthEnd)
-check_integers(df, dayEnd)
+check_integers(df, endYear)
+check_integers(df, endMonth)
+check_integers(df, endDay)
 
 # Check if there are incorrect characters
 # Save occurrenceID before conversion
 occurrenceID_before <- df %>%
-  filter(is.na(yearEnd) | is.na(monthEnd) | is.na(dayEnd)) %>%
+  filter(is.na(endYear) | is.na(endMonth) | is.na(endDay)) %>%
   select(occurrenceID) %>% 
   as.data.frame()
 
 # Convert columns to integer
 df2 <- df %>%
   mutate(
-    yearEnd = as.integer(yearEnd),
-    monthEnd = as.integer(monthEnd),
-    dayEnd = as.integer(dayEnd)
+    endYear = as.integer(endYear),
+    endMonth = as.integer(endMonth),
+    endDay = as.integer(endDay)
   )
 
 # NA values after conversion
 occurrenceID_after <- df2 %>%
-  filter(is.na(yearEnd) | is.na(monthEnd) | is.na(dayEnd)) %>%
+  filter(is.na(endYear) | is.na(endMonth) | is.na(endDay)) %>%
   select(occurrenceID) %>% 
   as.data.frame()
 
@@ -132,16 +132,16 @@ unique(df_occurrenceID_diff$FILE_NAME)
 # Execute the code below when you are sure you will not lose information
 df <- df %>%
   mutate(
-    yearStart = as.integer(yearStart),
-    monthStart = as.integer(monthStart),
-    dayStart = as.integer(dayStart)
+    startYear = as.integer(startYear),
+    startMonth = as.integer(startMonth),
+    startDay = as.integer(startDay)
   )
 
 ## Year ----
 # histogram of the distribution of years
 # Change binwidth to your needs
 # binwidth = width of bar
-ggplot(df, aes(x = yearEnd)) +
+ggplot(df, aes(x = endYear)) +
   geom_histogram(binwidth = 20, fill = "#CC99FF", color = "black", alpha = 0.7, na.rm = TRUE) + 
   labs(title = "Distribution of Years", x = "Year", y = "Frequency") +
   theme_minimal()
@@ -149,18 +149,18 @@ ggplot(df, aes(x = yearEnd)) +
 # Check the minimum and maximum values
 min_threshold_year <- 1900
 max_threshold_year <- 2025
-check_value_range(df, c("yearStart", "yearEnd"), 
+check_value_range(df, c("startYear", "endYear"), 
                   min_threshold = min_threshold_year, max_threshold = max_threshold_year)
 
 # Check extreme values of years
 year_check <- df %>%
-  filter(yearEnd < min_threshold_year | yearEnd > max_threshold_year) %>% # Check extreme values
-  select(occurrenceID, FILE_NAME, yearEnd, monthEnd, dayEnd) %>% 
-  arrange(desc(yearEnd))
+  filter(endYear < min_threshold_year | endYear > max_threshold_year) %>% # Check extreme values
+  select(occurrenceID, FILE_NAME, endYear, endMonth, endDay) %>% 
+  arrange(desc(endYear))
 
 ## Month ----
 # histogram of the distribution of months
-ggplot(df, aes(x = factor(monthEnd))) +
+ggplot(df, aes(x = factor(endMonth))) +
   geom_bar(fill = "#CCFF99", color = "black", alpha = 0.7) +
   labs(title = "Distribution of Months", x = "Month", y = "Frequency") +
   theme_minimal()
@@ -168,18 +168,18 @@ ggplot(df, aes(x = factor(monthEnd))) +
 # Check the minimum and maximum values
 min_threshold_month <- 1
 max_threshold_month <- 12
-check_value_range(df, c("monthStart", "monthEnd"), 
+check_value_range(df, c("startMonth", "endMonth"), 
                   min_threshold = min_threshold_month, max_threshold = max_threshold_month)
 
 # Check extreme values of month
 month_check <- df %>%
-  filter(monthEnd > max_threshold_month) %>% 
-  select(occurrenceID, FILE_NAME, yearEnd, monthEnd, dayEnd) %>% 
-  arrange(desc(yearEnd))
+  filter(endMonth > max_threshold_month) %>% 
+  select(occurrenceID, FILE_NAME, endYear, endMonth, endDay) %>% 
+  arrange(desc(endYear))
 
 ## Day ----
 # histogram of the distribution of days
-ggplot(df, aes(x = factor(dayEnd))) +
+ggplot(df, aes(x = factor(endDay))) +
   geom_bar(fill = "#FFFF66", color = "black", alpha = 0.7) +
   labs(title = "Distribution of Days", x = "Day", y = "Frequency") +
   theme_minimal()
@@ -187,20 +187,20 @@ ggplot(df, aes(x = factor(dayEnd))) +
 # Check the minimum and maximum values
 min_threshold_day <- 1
 max_threshold_day <- 31
-check_value_range(df, c("dayStart", "dayEnd"), 
+check_value_range(df, c("startDay", "endDay"), 
                   min_threshold = min_threshold_day, max_threshold = max_threshold_day)
 
 # Check extreme values of day
 day_check <- df %>%
-  filter(dayEnd > max_threshold_day) %>% 
-  select(occurrenceID, FILE_NAME, yearEnd, monthEnd, dayEnd) %>% 
-  arrange(desc(yearEnd))
+  filter(endDay > max_threshold_day) %>% 
+  select(occurrenceID, FILE_NAME, endYear, endMonth, endDay) %>% 
+  arrange(desc(endYear))
 
 ## eventDate ----
 ### Save the original eventDate in verbatimEventDate ----
 df <- mutate(df, verbatimEventDate = eventDate)
 # Concatenate date
-df <- df %>% mutate(eventDate = paste0(yearEnd, "-", monthEnd, "-", dayEnd))
+df <- df %>% mutate(eventDate = paste0(endYear, "-", endMonth, "-", endDay))
 
 
 # Coordinate ----
