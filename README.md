@@ -1,6 +1,6 @@
 # Project description
 
-This repository contains the scripts used to clean and process data for the data paper of Sentil et al. 2025, "_A Synthesized Dataset of Wild Bees and Hoverfly Occurrences in Europe_" based on spatial data of **wild bees** from the SAFEGUARD project. These scripts are designed to streamline data cleaning and transformation, making them easily reusable and adaptable for similar projects.
+This repository contains the scripts used to clean and process data for the data paper of Sentil et al. 2025, "_A synthesized database of wild bee and hoverfly occurrences in Europe_" based on spatial data of **wild bees** from the SAFEGUARD project. These scripts are designed to streamline data cleaning and transformation, making them easily reusable and adaptable for similar projects.
 
 ## Project funding
 This work has been funded by:
