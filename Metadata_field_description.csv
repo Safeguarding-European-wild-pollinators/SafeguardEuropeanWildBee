@@ -1,38 +1,39 @@
-﻿field;description;example
-databaseName;The name of the database that includes the data of bees or hoverflies.;European Bee DataBase (EBDB)
-institutionName;Name of the institution in charge of data management.;Laboratory of Zoology, University of Mons (UMONS)
-projectSource;Name of the projects that have funded the curation process.;PULSE | SAFEGUARD
-projectUpdate;Year of the last database update.;2024
-datasetName;Name of the dataset.;BDFGM_SAPOLL_2023
-datasetProvider;Entity or person who provide the dataset.;Pierre Rasmont
-datasetSource;Entity or person who produce the dataset.;Linz Museum
-license;Creative Common license providing information concerning official permission to use the database.;http://creativecommons.org/licenses/by/4.0/
-occurrenceID;An unique identifier for the data.;GBIF_bees_EN_RL_60758
-scientificNameAuthorship;Author credited for the description of the species (scientificName) and the year of publication.;Mavromoustakis, 1938
-order;The name of the order to which the species belongs.;Hymenoptera
-family;The name of the family to which the species belongs.;Megachilidae
-subfamily;The name of the subfamily to which the species belongs.;Megachilinae
-tribe;The name of the tribe to which the species belongs.;Megachilini
-genus;The name of the genus to which the species belongs.;Megachile 
-subgenus;The name of the subgenus to which the species belongs.;Chalicodoma
-infraspecificEpithet;The scientific name of the infraspecific epithet, which corresponds to the third part of the scientific name, is used to classify a rank below species such as a subspecies or variety.;
-scientificName;The full binomial name of a species, consisting of a combination of the genus name and the specific epithet.;Megachile cypricola
-individualCountEnd;The maximum number of individuals recorded. If no range is specified, individualCountEnd is used as the default.;2
-individualCountStart;The minimum number of individuals recorded, used when a range is provided to indicate uncertainty in the count.;1
-sex;The sex of the individual(s) represented in the data.;f
-eventDateEnd;The ending date of the interval during which the event  was recorded. If no range is specified, eventDateEnd is used by default.;2024-01-31
-eventDateStart;The starting date of the interval during which the event was recorded, used when a range is specified to indicate the earliest possible date of the event.;2024-01-31
-yearEnd;The latest year of the interval during which the event was recorded. If no range is specified, yearEnd is used by default.;2024
-monthEnd;The latest month of the interval during which the event was recorded. If no range is specified, monthEnd is used by default.;12
-dayEnd;The latest day of the interval during which the event was recorded. If no range is specified, dayEnd is used by default.;31
-yearStart;The earliest year of the interval during which the event was recorded, used when a range is specified.;2023
-monthStart;The earliest month of the interval during which the event was recorded, used when a range is specified.;01
-dayStart;The earliest day of the interval during which the event was recorded, used when a range is specified.;01
-country;The name of the country in which the record occurs.;France
-stateProvince;The name of the next smaller administrative region than country (state, province, canton, department, region, etc.) in which the event occurs.;Corse
-verbatimLocality;The original textual description of the place.;Bariloche, 25 km NNE via Ruta Nacional 40 (=Ruta 237)
-decimalLatitude;The geographic latitude (in decimal degrees) of the data. Positive values are north of the Equator.;34.70100
-decimalLongitude;The geographic longitude (in decimal degrees) of the data. Positive values are east of the Greenwich Meridian, negative values are west of it.;33.023167
-coordinateUncertaintyInMetersEnd;The maximum horizontal distance (in meters) representing the uncertainty around the provided coordinates. If no range is specified, coordinateUncertaintyInMetersEnd is used by default.Leave blank if the uncertainty is unknown.;1000
-coordinateUncertaintyInMetersStart;The minimum horizontal distance (in meters) representing the uncertainty around the provided coordinates, used when a range is specified to indicate the smallest possible uncertainty. Leave blank if the uncertainty is unknown.;500
-manualGeoreferencing;Indicating whether the coordinates were manually georeferenced from the verbatimLocality.;provided
+﻿field;description;example;format;unit
+databaseName;The name of the database that includes the data of bees or hoverflies.;European Bee DataBase (EBDB);character;
+institutionName;Name of the institution in charge of data management.;Laboratory of Zoology, University of Mons (UMONS);character;
+projectSource;Name of the projects that have funded the curation process.;PULSE | SAFEGUARD;character;
+dateModified;Year of the last database update.;2024;integer;
+datasetName;Name of the dataset.;BDFGM_SAPOLL_2023;character;
+datasetProvider;Entity or person who provide the dataset.;Pierre Rasmont;character;
+datasetSource;Entity or person who produce the dataset.;Linz Museum;character;
+license;Creative Common license providing information concerning official permission to use the database.;http://creativecommons.org/licenses/by/4.0/;character;
+occurrenceID;An unique identifier for the data.;GBIF_bees_EN_RL_60758;character;
+scientificNameAuthorship;Author credited for the description of the species (scientificName) and the year of publication.;Mavromoustakis, 1938;character;
+order;The name of the order to which the species belongs.;Hymenoptera;character;
+family;The name of the family to which the species belongs.;Megachilidae;character;
+subfamily;The name of the subfamily to which the species belongs.;Megachilinae;character;
+tribe;The name of the tribe to which the species belongs.;Megachilini;character;
+genus;The name of the genus to which the species belongs.;Megachile ;character;
+subgenus;The name of the subgenus to which the species belongs.;Chalicodoma;character;
+infraspecificEpithet;The scientific name of the infraspecific epithet, which corresponds to the third part of the scientific name, is used to classify a rank below species such as a subspecies or variety.;ibirriensis;character;
+scientificName;The full binomial name of a species, consisting of a combination of the genus name and the specific epithet.;Megachile cypricola;character;
+individualCountEnd;The maximum number of individuals recorded. If no range is specified, individualCountEnd is used as the default.;2;integer;
+individualCountStart;The minimum number of individuals recorded, used when a range is provided to indicate uncertainty in the count.;1;integer;
+sex;The sex of the individual(s) represented in the data.;F;character;"F (female); M (male); W (worker); H (hermaphrodite); Q (queen); I (male of social bees); U (unindentified)"
+eventDateEnd;The ending date of the interval during which the event  was recorded. If no range is specified, eventDateEnd is used by default.;2024-01-31;yyyy-mm-dd;
+eventDateStart;The starting date of the interval during which the event was recorded, used when a range is specified to indicate the earliest possible date of the event.;2024-01-31;yyyy-mm-dd;
+yearEnd;The latest year of the interval during which the event was recorded. If no range is specified, yearEnd is used by default.;2024;yyyy;
+monthEnd;The latest month of the interval during which the event was recorded. If no range is specified, monthEnd is used by default.;12;mm;
+dayEnd;The latest day of the interval during which the event was recorded. If no range is specified, dayEnd is used by default.;31;dd;
+yearStart;The earliest year of the interval during which the event was recorded, used when a range is specified.;2023;yyyy;
+monthStart;The earliest month of the interval during which the event was recorded, used when a range is specified.;01;mm;
+dayStart;The earliest day of the interval during which the event was recorded, used when a range is specified.;01;dd;
+country;The name of the country in which the record occurs.;France;character;
+stateProvince;The name of the next smaller administrative region than country (state, province, canton, department, region, etc.) in which the event occurs.;Corse;character;
+county;The name of the next smaller administrative region than stateProvince (county, shire, department, etc.) in which the event occurs.;Lorraine;character;
+verbatimLocality;The original textual description of the place.;Bariloche, 25 km NNE via Ruta Nacional 40 (=Ruta 237);character;
+decimalLatitude;The geographic latitude (in decimal degrees) of the data. Positive values are north of the Equator.;34.70100;float;
+decimalLongitude;The geographic longitude (in decimal degrees) of the data. Positive values are east of the Greenwich Meridian, negative values are west of it.;33.023167;float;
+coordinateUncertaintyInMetersEnd;The maximum horizontal distance (in meters) representing the uncertainty around the provided coordinates. If no range is specified, coordinateUncertaintyInMetersEnd is used by default.Leave blank if the uncertainty is unknown.;1000;integer;
+coordinateUncertaintyInMetersStart;The minimum horizontal distance (in meters) representing the uncertainty around the provided coordinates, used when a range is specified to indicate the smallest possible uncertainty. Leave blank if the uncertainty is unknown.;500;integer;
+manualGeoreferencing;Indicating whether the coordinates were manually georeferenced from the verbatimLocality.;provided;character;"provided (coordinate provided); not_provided (coordinate manually added)"
