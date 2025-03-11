@@ -1,0 +1,38 @@
+standardizedMapping;field;isMandatory;description;example;format;unit
+pms:databaseName;databaseName;no;The name of the database that includes the data of bees or hoverflies.;European Bee DataBase (EBDB);character;
+dwc:institutionCode;institutionName;no;Name of the institution in charge of data management.;Laboratory of Zoology, University of Mons (UMONS);character;
+dwc:collectionID;projectSource;no;Name of the projects that have funded the curation process.;PULSE | SAFEGUARD;character;
+dcterms:dateModified;projectUpdate;no;Year of the last database update.;2024;integer;
+dwc:datasetName;datasetName;yes;Name of the dataset.;BDFGM_SAPOLL_2023;character;
+pms:dataProviderName;datasetProvider;yes;Entity or person who provide the dataset.;Pierre Rasmont;character;
+no standard available;datasetSource;yes;Entity or person who produce the dataset.;Linz Museum;character;
+dcterms:license;license;yes;Creative Common license providing information concerning official permission to use the database.;http://creativecommons.org/licenses/by/4.0/;character;
+dwc:occurrenceID;occurrenceID;yes;An unique identifier for the data.;GBIF_bees_EN_RL_60758;character;
+dwc:scientificNameAuthorship;scientificNameAuthorship;Will be auto-filled;Author credited for the description of the species (scientificName) and the year of publication.;Mavromoustakis, 1938;character;
+dwc:order;order;Will be auto-filled;The name of the order to which the species belongs.;Hymenoptera;character;
+dwc:family;family;Will be auto-filled;The name of the family to which the species belongs.;Megachilidae;character;
+dwc:subfamily;subfamily;Will be auto-filled;The name of the subfamily to which the species belongs.;Megachilinae;character;
+dwc:subtribe;tribe;Will be auto-filled;The name of the tribe to which the species belongs.;Megachilini;character;
+dwc:genus;genus;Will be auto-filled;The name of the genus to which the species belongs.;Megachile ;character;
+dwc:subgenus;subgenus;Will be auto-filled;The name of the subgenus to which the species belongs.;Chalicodoma;character;
+dwc:infraspecificEpithet;infraspecificEpithet;Will be auto-filled;The scientific name of the infraspecific epithet, which corresponds to the third part of the scientific name, is used to classify a rank below species such as a subspecies or variety.;ibirriensis;character;
+dwc:scientificName;scientificName;Will be auto-filled;The full binomial name of a species, consisting of a combination of the genus name and the specific epithet.;Megachile cypricola;character;
+pms:maximumMeasurementValue;individualCountEnd;yes;The maximum number of individuals recorded. If no range is specified, individualCountEnd is used as the default.;2;integer;
+pms:minimumMeasurementValue;individualCountStart;no;The minimum number of individuals recorded, used when a range is provided to indicate uncertainty in the count.;1;integer;
+dwc:sex;sex;good practice;The sex of the individual(s) represented in the data.;F;character;"F (female); M (male); H (hermaphrodite); I (males of  social bees); Q (queen); W (worker); U (unindentified)"
+pms:endYear;endYear;good practice;The latest year of the interval during which the event was recorded. If no range is specified, yearEnd is used by default.;2024;yyyy;
+pms:endMonth;endMonth;good practice;The latest month of the interval during which the event was recorded. If no range is specified, monthEnd is used by default.;12;mm;
+pms:endDay;endDay;good practice;The latest day of the interval during which the event was recorded. If no range is specified, dayEnd is used by default.;31;dd;
+pms:startYear;startYear;no;The earliest year of the interval during which the event was recorded, used when a range is specified.;2023;yyyy;
+pms:startMonth;startMonth;no;The earliest month of the interval during which the event was recorded, used when a range is specified.;01;mm;
+pms:startDay;startDay;no;The earliest day of the interval during which the event was recorded, used when a range is specified.;01;dd;
+dwc:country;country;Will be auto-filled;The name of the country in which the record occurs.;France;character;
+dwc:stateProvince;stateProvince;Will be auto-filled;The name of the next smaller administrative region than country (state, province, canton, department, region, etc.) in which the event occurs.;Corse;character;
+dwc:county;county;Will be auto-filled;The name of the next smaller administrative region than stateProvince (county, shire, department, etc.) in which the event occurs.;Lorraine;character;
+dwc:verbatimLocality;verbatimLocality;good practice;The original textual description of the place.;Bariloche, 25 km NNE via Ruta Nacional 40 (=Ruta 237);character;
+dwc:decimalLatitude;decimalLatitude;yes;The geographic latitude (in decimal degrees) of the data. Positive values are north of the Equator.;34.70100;float;
+dwc:decimalLongitude;decimalLongitude;yes;The geographic longitude (in decimal degrees) of the data. Positive values are east of the Greenwich Meridian, negative values are west of it.;33.023167;float;
+dwc:coordinateUncertaintyInMeters;coordinateUncertaintyInMetersEnd;good practice;The maximum horizontal distance (in meters) representing the uncertainty around the provided coordinates.;1000;integer;
+dwc:coordinateUncertaintyInMeters;coordinateUncertaintyInMetersStart;good practice;The minimum horizontal distance (in meters) representing the uncertainty around the provided coordinates, used when a range is specified to indicate the smallest possible uncertainty. Leave blank if the uncertainty is unknown.;1000;integer;
+no standard available;manualGeoreferencing;yes;Indicating whether the coordinates were manually georeferenced from the verbatimLocality.;provided;character;"provided (coordinate provided); not_provided (coordinate manually added)"
+dwc:footprintWKT;footprintWKT;Will be auto-filled;A Well-Known Text (WKT) representation of the shape (footprint, geometry) that defines the location. CRS = 3035, unit in meters.;POINT (2128512 -1359670);character;
