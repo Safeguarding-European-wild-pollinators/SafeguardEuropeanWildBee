@@ -3,7 +3,7 @@ columns <- c(
   "databaseName",
   "institutionName", 
   "projectSource",
-  "projectUpdate",
+  "dateModified",
   "datasetName",
   "license",
   "occurrenceID",
