@@ -6,7 +6,7 @@ source("./library.R", echo = FALSE)
 
 # import ----
 # Import all the data from the dataset folder
-files_list <- list.files(path = "./data/dataset_folder/", pattern = "\\.csv$", full.names = TRUE) # List all .csv files in folder
+files_list <- list.files(path = "./data/working_directory/", pattern = "\\.csv$", full.names = TRUE) # List all .csv files in folder
 
 # Choose the number of cores to improve import speed
 nThread <- detectCores() - 2
