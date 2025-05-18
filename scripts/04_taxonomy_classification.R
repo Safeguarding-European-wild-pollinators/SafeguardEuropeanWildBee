@@ -21,9 +21,6 @@ taxonomy <- fread("./data/wildBeeClassification.csv", header = TRUE,
 # Old fields will be removed
 df <- df %>% 
   select(
-    -c(scientificNameAuthorship, genus)
-  )
-  select(
     -c(scientificNameAuthorship, order, family, subfamily, tribe, genus, subgenus, specificEpithet)
   )
 
