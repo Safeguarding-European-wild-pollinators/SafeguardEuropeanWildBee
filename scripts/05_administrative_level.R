@@ -27,6 +27,10 @@ county_shp <- st_read("./data/shapefile/county/gaul1_asap.shp") %>%
   select(county) # Select columns
 
 # 2) Data wrangling ----
+# !!! Remove rows with NA values in decimalLongitude and decimalLatitude !!!
+# Missing values in st_as_sf() are not allowed
+df <- df[complete.cases(df$decimalLongitude, df$decimalLatitude), ]
+
 # Transform df to sf object
 df <- st_as_sf(df, coords = c("decimalLongitude", "decimalLatitude"), crs = 4326, remove = FALSE) %>% # Transform to sf object
   st_transform(projection_3035) # Transform to projection 3035
