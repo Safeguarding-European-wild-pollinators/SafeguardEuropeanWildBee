@@ -1,7 +1,6 @@
 Overview
 This Excel file is designed to help you collect, organize and submit your data. The file is structured to ensure consistency and compatibility with standard formats, including Darwin Core and other relevant standards.
 How to Use This File:
-FieldDescription: In this sheet, you will find detailed descriptions for each field, including the field name, a mapping to relevant standards (e.g., Darwin Core, ISO,...), whether the field is mandatory, the definition, the data type, example values, and the format. Please refer to this sheet when filling in your data.
+ToFill_FieldDescription: In this sheet, you will find detailed descriptions for each field, including the field name, a mapping to relevant standards (e.g., Darwin Core, ISO,...), whether the field is mandatory, the definition, the data type, example values, and the format. Please refer to this sheet when filling in your data.
 To find the correspondence between our field names and the standards please refer to : https://app.pollinatorhub.eu/vocabulary/descriptors/dependencies-reference
-Example: This sheet provides sample rows of data that demonstrate how the file should be filled out. Review these examples to understand the correct formatting and data entry conventions.
-ToFill: This is the sheet where you should enter your data. The structure and headers are the same as those in the 'Example' sheet, but the rows are empty for you to fill in.
+ToFill_fillMe: This is the sheet where you should enter your data. The structure and headers are the same as those in the 'Example' sheet, but the rows are empty for you to fill in.
