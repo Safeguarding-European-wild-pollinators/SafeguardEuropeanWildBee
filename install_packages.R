@@ -12,6 +12,7 @@ required_packages <- c(
   "readxl",
   "RColorBrewer",
   "scales",
+  "future", # needed for red package
   "red",
   "visdat",
   "naniar",
