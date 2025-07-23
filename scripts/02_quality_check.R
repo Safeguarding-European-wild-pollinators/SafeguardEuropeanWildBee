@@ -36,7 +36,6 @@ visdat::vis_dat(df)
 (file_names <- df %>% filter(is.na(databaseName))    %>% pull(FILE_NAME) %>%  unique() )
 (file_names <- df %>% filter(is.na(institutionName)) %>% pull(FILE_NAME) %>%  unique() )
 (file_names <- df %>% filter(is.na(projectSource))   %>% pull(FILE_NAME) %>%  unique() )
-(file_names <- df %>% filter(is.na(dateModified))   %>% pull(FILE_NAME) %>%  unique() )
 (file_names <- df %>% filter(is.na(datasetName))     %>% pull(FILE_NAME) %>%  unique() )
 (file_names <- df %>% filter(is.na(datasetProvider)) %>% pull(FILE_NAME) %>%  unique() )
 (file_names <- df %>% filter(is.na(datasetSource))   %>% pull(FILE_NAME) %>%  unique() )
@@ -195,12 +194,6 @@ day_check <- df %>%
   filter(endDay > max_threshold_day) %>% 
   select(occurrenceID, FILE_NAME, endYear, endMonth, endDay) %>% 
   arrange(desc(endYear))
-
-## eventDate ----
-### Save the original eventDate in verbatimEventDate ----
-df <- mutate(df, verbatimEventDate = eventDate)
-# Concatenate date
-df <- df %>% mutate(eventDate = paste0(endYear, "-", endMonth, "-", endDay))
 
 
 # Coordinate ----

@@ -3,7 +3,6 @@ columns <- c(
   "databaseName",
   "institutionName", 
   "projectSource",
-  "dateModified",
   "datasetName",
   "license",
   "occurrenceID",
@@ -18,8 +17,9 @@ columns <- c(
   "scientificName",
   "infraspecificEpithet",
   "sex", 
-  "individualCountStart",
-  "individualCountEnd",
+  "individualCountInterval",
+  "startIndividualCount",
+  "endIndividualCount",
   
   # Temporal
   "endYear",
@@ -36,8 +36,7 @@ columns <- c(
   "verbatimLocality",
   "decimalLatitude",
   "decimalLongitude",
-  "coordinateUncertaintyInMetersStart",
-  "coordinateUncertaintyInMetersEnd",
+  "coordinatePrecision",
   "manualGeoreferencing",
   "geometry"
 )

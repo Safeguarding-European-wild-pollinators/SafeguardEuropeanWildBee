@@ -8,7 +8,7 @@ df <- fread(paste0("./data/working_directory/03_scientificName_validation_", Sys
 df0 <- df
 
 # Data with the taxonomic classification of wild bees
-taxonomy <- fread("./data/wildBeeClassification.csv", header = TRUE, 
+taxonomy <- fread("./data/pollinatorsClassification.csv", header = TRUE, 
                   sep = ";", strip.white = TRUE, encoding = "Latin-1")
 
 
@@ -21,7 +21,7 @@ taxonomy <- fread("./data/wildBeeClassification.csv", header = TRUE,
 # Old fields will be removed
 df <- df %>% 
   select(
-    -c(scientificNameAuthorship, order, family, subfamily, tribe, genus, subgenus, specificEpithet)
+    -c(scientificNameAuthorship, order, family, subfamily, tribe, genus, subgenus)
   )
 
 ## Assign classification ----
