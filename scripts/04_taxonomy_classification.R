@@ -29,7 +29,7 @@ df <- df %>%
 df_taxonomy <- merge(df, taxonomy, by = "scientificName", all.x = TRUE)
 
 ## Check classification ----
-df_taxonomy_check <- select(df_taxonomy, scientificName, family, subfamily, tribe, genus, subgenus, specificEpithet, 
+df_taxonomy_check <- select(df_taxonomy, scientificName, family, subfamily, tribe, genus, subgenus 
                             ) %>% unique()
 # Check NA values
 visdat::vis_miss(df_taxonomy_check)
