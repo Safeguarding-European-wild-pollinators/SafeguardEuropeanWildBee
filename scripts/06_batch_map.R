@@ -209,7 +209,8 @@ generate_species_map <- function(df_map, species_name, csv_dir, xlsx_dir, map_di
   ### export ---- 
   #### png ---- 
   filename_png <- file.path(map_dir, paste0(gsub(" ", "_", species_name), ".png"))
-  ggsave(filename = filename_png, plot = p, device = "png", width = 14, height = 10, bg = "white", dpi = 120)
+  ggsave(filename = filename_png, plot = p, device = "png", width = 14, height = 10, bg = "white", 
+         dpi = 120) # define the resolution and also the size of the image
   cat("Map exported:        ", filename_png, "\n")
   # ----------- PNG ----------- #
   
