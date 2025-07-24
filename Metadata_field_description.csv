@@ -1,0 +1,44 @@
+﻿field;description;example;format;database
+databaseName;The name of the database that includes the data of bees or hoverflies.;European Bee DataBase (EBDB);character;DB bees and hoverflies
+institutionName;Name of the institution in charge of data management.;Laboratory of Zoology, University of Mons (UMONS);character;DB bees and hoverflies
+projectSource;Name of the projects that have funded the curation process.;PULSE | SAFEGUARD;character;DB bees and hoverflies
+projectUpdate;Year of the last database update.;2024;integer;DB bees and hoverflies
+datasetName;Name of the dataset.;BDFGM_SAPOLL_2023;character;only DB bees
+datasetProvider;Entity or person who provide the dataset.;Pierre Rasmont;character;DB bees and hoverflies
+datasetSource;Entity or person who produce the dataset.;Linz Museum;character;DB bees and hoverflies
+dataSource;Entity or person who produced the data.;Sapienza;character;DB bees and hoverflies
+license;Creative Common license providing information concerning official permission to use the database.;http://creativecommons.org/licenses/by/4.0/;character;DB bees and hoverflies
+occurrenceID;An unique identifier for the data.;GBIF_bees_EN_RL_60758;character;DB bees and hoverflies
+verbatimOccurrenceID;The original unique identifier of the data.;123456;character;DB bees and hoverflies
+scientificNameAuthorship;Author credited for the description of the species (scientificName) and the year of publication.;Mavromoustakis, 1938;character;DB bees and hoverflies
+order;The name of the order to which the species belongs.;Hymenoptera;character;DB bees and hoverflies
+family;The name of the family to which the species belongs.;Megachilidae;character;DB bees and hoverflies
+subfamily;The name of the subfamily to which the species belongs.;Megachilinae;character;DB bees and hoverflies
+tribe;The name of the tribe to which the species belongs.;Megachilini;character;DB bees and hoverflies
+genus;The name of the genus to which the species belongs.;Megachile ;character;DB bees and hoverflies
+subgenus;The name of the subgenus to which the species belongs.;Chalicodoma;character;DB bees and hoverflies
+infraspecificEpithet;The scientific name of the infraspecific epithet, which corresponds to the third part of the scientific name, is used to classify a rank below species such as a subspecies or variety.;ibirriensis;character;DB bees and hoverflies
+scientificName;The full binomial name of a species, consisting of a combination of the genus name and the specific epithet.;Megachile cypricola;character;DB bees and hoverflies
+individualCountInterval;Indicates if an individual count interval occurred (between startIndividualCount and endIndividualCount). If the interval occurred is TRUE otherwise FALSE.;TRUE / FALSE;character;DB bees and hoverflies
+startIndividualCount;The minimum number of individuals recorded, used when a range is provided to indicate uncertainty in the count.;1;integer;DB bees and hoverflies
+endIndividualCount;The maximum number of individuals recorded. If no range is specified, endIndividualCount is used as the default.;2;integer;DB bees and hoverflies
+sex;"The sex of the individual(s) represented in the data. Seven different entries: F (female); M (male); H (hermaphrodite); I (males of social bees); Q (queen); W (worker); U (unindentified).";F;character;DB bees and hoverflies
+eventDateInterval;Indicates if a sampling interval occurred (between startEventDate and endEventDate). If interval occurred is TRUE otherwise FALSE.;TRUE / FALSE;character;DB bees and hoverflies
+startEventDate;The starting date of the interval during which the event was recorded, used when a range is specified to indicate the earliest possible date of the event.;2024-01-31;yyyy-mm-dd;DB bees and hoverflies
+endEventDate;The ending date of the interval during which the event was recorded. If no range is specified, endEventDate is used by default.;2024-01-31;yyyy-mm-dd;DB bees and hoverflies
+startDay;The earliest day of the interval during which the event was recorded, used when a range is specified.;01;dd;DB bees and hoverflies
+startMonth;The earliest month of the interval during which the event was recorded, used when a range is specified.;01;mm;DB bees and hoverflies
+startYear;The earliest year of the interval during which the event was recorded, used when a range is specified.;2023;yyyy;DB bees and hoverflies
+endDay;The latest day of the interval during which the event was recorded. If no range is specified, endDay is used by default.;31;dd;DB bees and hoverflies
+endMonth;The latest month of the interval during which the event was recorded. If no range is specified, endMonth is used by default.;12;mm;DB bees and hoverflies
+endYear;The latest year of the interval during which the event was recorded. If no range is specified, endYear is used by default.;2024;yyyy;DB bees and hoverflies
+country;The name of the country in which the record occurs.;France;character;DB bees and hoverflies
+stateProvince;The name of the next smaller administrative region than country (state, province, canton, department, region, etc.) in which the event occurs.;Corse;character;DB bees and hoverflies
+county;The name of the next smaller administrative region than stateProvince (county, shire, department, etc.) in which the event occurs.;Lorraine;character;DB bees and hoverflies
+verbatimLocality;The original textual description of the place.;Bariloche, 25 km NNE via Ruta Nacional 40 (=Ruta 237);character;DB bees and hoverflies
+decimalLatitude;The geographic latitude (in decimal degrees) of the data. Positive values are north of the Equator.;34.70100;float;DB bees and hoverflies
+decimalLongitude;The geographic longitude (in decimal degrees) of the data. Positive values are east of the Greenwich Meridian, negative values are west of it.;33.023167;float;DB bees and hoverflies
+coordinatePrecision;The maximum horizontal distance (in meters) representing the uncertainty around the provided coordinates.;1000;integer;only DB bees
+manualGeoreferencing;"Indicates whether the coordinates were manually georeferenced from the verbatimLocality. Two different entries: provided (coordinate provided); not_provided (coordinate manually added).";provided;character;only DB bees
+isPseudodata;"Indicates records for which coordinates are not directly tied to individual specimens. If a record is identified as pseudodata is TRUE, otherwise FALSE. This only applies to a part of the Bee database (see Manuscript section ""Pseudodata"" for more details).";TRUE / FALSE;character;only DB bees
+verbatimElevation;The original elevation (altitude, usually above sea level) of the verbatimLocality.;1000m;character;only DB bees
