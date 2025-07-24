@@ -240,7 +240,7 @@ dir.create(output_directory, showWarnings = FALSE, recursive = TRUE)
 generate_all_species_maps(df_map, output_directory, df_db)
 
 # Export species summary
-write_xlsx(species_summary, paste0(directory, Sys.Date(), "species_summary.xlsx"))
+write_xlsx(species_summary, paste0(output_directory, Sys.Date(), "species_summary.xlsx"))
 
 
 
