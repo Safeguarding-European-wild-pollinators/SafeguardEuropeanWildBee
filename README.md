@@ -68,7 +68,7 @@ The following external sources were used to ensure the accuracy and reliability 
     Note : scientific names have been updated and standardized to match the European checklist (Ghisbain et al. 2023): _Hylaeus longimacula_ --> _Hylaeus longimaculus_, _Dioxys atlanticus_ --> _Dioxys atlantica_, _Dioxys cinctus_ --> _Dioxys cincta_, _Dioxys moestus_ --> _Dioxys moesta_, _Dioxys pumilus_ --> _Dioxys pumila_. Note2: two species (_Bombus bisiculus_ & _Seladonia pici_) are not present in the European checklist.
 
 -  **Country and state province assignments**: The country and state province assignments were performed using shapefiles based on the World Geographical Scheme for Recording Plant Distributions (WGSRPD):
-    > [R. K. Brummitt (2001)](http://data.europa.eu/89h/jrc-10112-10004): World Geographic Scheme for Recording Plant Distributions, Edition 2. Hunt Institute for Botanical Documentation, Carnegie Mellon University (Pittsburgh). http://rs.tdwg.org/wgsrpd/doc/data/ [http://rs.tdwg.org/wgsrpd/doc/data/](http://rs.tdwg.org/wgsrpd/doc/data/).
+    > [R. K. Brummitt (2001)](http://data.europa.eu/89h/jrc-10112-10004): World Geographic Scheme for Recording Plant Distributions, Edition 2. Hunt Institute for Botanical Documentation, Carnegie Mellon University (Pittsburgh).[http://rs.tdwg.org/wgsrpd/doc/data/](http://rs.tdwg.org/wgsrpd/doc/data/).
 
 -  **County assignments**: The county assignments were performed using shapefiles from the European Commission:
     > [Urbano, Ferdinando (2018)](http://data.europa.eu/89h/jrc-10112-10004): Global administrative boundaries. European Commission, Joint Research Centre (JRC) [Dataset] PID: [http://data.europa.eu/89h/jrc-10112-10004](http://data.europa.eu/89h/jrc-10112-10004).
